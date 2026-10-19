@@ -1,171 +1,302 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy &amp; Terms — Profit Growth Coaching</title>
-  <meta name="description" content="Privacy Policy and Terms of Service for Profit Growth Coaching." />
-  <meta name="theme-color" content="#050b14" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Privacy, Terms &amp; Accessibility — Profit Growth Coaching</title>
+  <meta name="description" content="How Profit Growth Coaching handles your data, the terms that apply when you use this site or apply for a profit audit, and our accessibility commitments." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://profitgrowthcoaching.com/legal" />
+  <meta name="theme-color" content="#040a13" />
+  <meta name="color-scheme" content="dark" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Privacy, Terms &amp; Accessibility — Profit Growth Coaching" />
+  <meta property="og:description" content="How we handle your data, the terms of service, and our accessibility commitments." />
+  <meta property="og:url" content="https://profitgrowthcoaching.com/legal" />
+  <meta property="og:image" content="https://profitgrowthcoaching.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/styles.css" />
+
   <style>
-    .legal-header { position: static; }
-    .legal-main { padding: 64px 0 84px; }
     .legal-wrap { max-width: 780px; margin-inline: auto; }
-    .back-link {
-      display: flex;
-      width: fit-content;
-      align-items: center; gap: 7px;
-      margin-bottom: 34px; color: var(--green);
-      font-family: var(--font-display); font-size: 12px; font-weight: 700;
-    }
-    .back-link .icon { width: 14px; height: 14px; transform: rotate(180deg); }
     .legal-wrap h1 { margin: 10px 0 14px; font-size: clamp(2.2rem, 5vw, 3.3rem); }
-    .legal-wrap > p { max-width: 600px; font-size: 14px; }
-    .legal-nav { display: flex; gap: 8px; margin: 28px 0 8px; }
+    .legal-wrap > p { max-width: 620px; font-size: 14.5px; color: var(--muted); }
+    .legal-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 8px; }
     .legal-nav a {
       padding: 8px 13px; border: 1px solid var(--line); border-radius: 8px;
-      color: var(--text-soft); font-size: 11px; transition: border-color .2s ease, color .2s ease;
+      color: var(--text-soft); font-size: 12px; transition: border-color .2s ease, color .2s ease;
     }
-    .legal-nav a:hover { border-color: rgba(60,231,170,.4); color: var(--green); }
-    .legal-section {
-      margin-top: 46px; padding-top: 34px; border-top: 1px solid var(--line);
-      scroll-margin-top: 32px;
-    }
+    .legal-nav a:hover { border-color: rgba(60, 231, 170, .4); color: var(--green); }
+    .legal-section { margin-top: 46px; padding-top: 34px; border-top: 1px solid var(--line); scroll-margin-top: 32px; }
     .legal-section h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
-    .legal-updated { margin-top: 8px; color: var(--muted-2); font-size: 10px; }
-    .legal-section h3 {
-      margin: 26px 0 8px; font-size: 14px; letter-spacing: -.015em;
-    }
-    .legal-section p, .legal-section li {
-      color: var(--muted); font-size: 13px; line-height: 1.75;
-    }
+    .legal-updated { margin-top: 8px; color: var(--muted-2); font-size: 11px; }
+    .legal-section h3 { margin: 26px 0 8px; font-size: 15px; letter-spacing: -.015em; }
+    .legal-section p, .legal-section li { color: var(--muted); font-size: 14px; line-height: 1.75; }
     .legal-section p + p { margin-top: 10px; }
     .legal-section ul { margin: 8px 0 0; padding-left: 18px; list-style: disc; }
     .legal-section li { margin: 5px 0; }
+    .legal-section strong { color: var(--text-soft); }
+    .legal-section a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
+    .legal-table { width: 100%; margin-top: 12px; border-collapse: collapse; }
+    .legal-table th, .legal-table td {
+      padding: 10px 12px; border: 1px solid var(--line); text-align: left;
+      color: var(--muted); font-size: 12.5px; vertical-align: top;
+    }
+    .legal-table th { color: var(--text-soft); font-family: var(--font-display); font-weight: 700; background: rgba(8, 23, 37, .6); }
+    .legal-table-scroll { overflow-x: auto; }
     .legal-note {
-      margin-top: 26px; padding: 14px 16px; border: 1px solid rgba(255,193,118,.22);
-      border-radius: 10px; background: rgba(255,193,118,.04);
-      color: #d9bd94 !important; font-size: 11px !important; line-height: 1.6;
+      margin-top: 26px; padding: 14px 16px; border: 1px solid rgba(255, 193, 118, .22);
+      border-radius: 10px; background: rgba(255, 193, 118, .04);
+      color: #d9bd94 !important; font-size: 12.5px !important; line-height: 1.65;
     }
-    .legal-footer {
-      padding: 22px 0; border-top: 1px solid var(--line);
-      color: var(--muted-2); font-size: 9.5px;
-    }
-    .legal-footer .container { display: flex; justify-content: space-between; gap: 16px; }
-    .legal-footer a:hover { color: var(--green); }
+    .legal-note strong { color: #f0d3ac; }
     @media (max-width: 560px) {
-      .legal-main { padding: 42px 0 60px; }
-      .legal-footer .container { flex-direction: column; }
+      .legal-section h3 { font-size: 14.5px; }
+      .legal-section p, .legal-section li { font-size: 13.5px; }
     }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#legal-content">Skip to content</a>
-  <header class="site-header legal-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Profit Growth Coaching home">
-        <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="brandGradLegal" x1="8" y1="34" x2="33" y2="5" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#14bd83"/><stop offset="1" stop-color="#8bffd6"/>
-            </linearGradient>
-          </defs>
-          <circle cx="20" cy="20" r="18.4" stroke="url(#brandGradLegal)" stroke-width="1.3" opacity=".75"/>
-          <path d="M11.6 25.6c5.3-.9 8.4-4.1 10-11.8 2 7.7 5.1 10.9 10.4 11.8" stroke="url(#brandGradLegal)" stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M21.6 21.3v10.2" stroke="url(#brandGradLegal)" stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M13.5 16.4c2.6-.3 4.6-1.3 6.2-3.1-.1 2.8-1.4 4.8-3.6 6.4" fill="url(#brandGradLegal)"/>
-        </svg>
-        <span class="brand-text">
-          <span class="brand-name">Profit Growth</span>
-          <span class="brand-sub">Coaching</span>
-        </span>
-      </a>
-      <a class="btn btn--ghost btn--sm" href="index.html">Back to site</a>
-    </div>
-  </header>
 
-  <main class="legal-main" id="legal-content">
-    <div class="container">
-      <div class="legal-wrap">
-        <a class="back-link" href="index.html">
-          <svg class="icon" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
-          Back to Profit Growth Coaching
+  <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+  </svg>
+
+  <div class="page-shell">
+    <header class="site-header page-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="Profit Growth Coaching home">
+          <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="brandGradLegal" x1="8" y1="34" x2="33" y2="5" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#14bd83"/><stop offset="1" stop-color="#8bffd6"/>
+              </linearGradient>
+            </defs>
+            <circle cx="20" cy="20" r="18.4" stroke="url(#brandGradLegal)" stroke-width="1.3" opacity=".75"/>
+            <path d="M11.6 25.6c5.3-.9 8.4-4.1 10-11.8 2 7.7 5.1 10.9 10.4 11.8" stroke="url(#brandGradLegal)" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M21.6 21.3v10.2" stroke="url(#brandGradLegal)" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M13.5 16.4c2.6-.3 4.6-1.3 6.2-3.1-.1 2.8-1.4 4.8-3.6 6.4" fill="url(#brandGradLegal)"/>
+          </svg>
+          <span class="brand-text">
+            <span class="brand-name">Profit Growth</span>
+            <span class="brand-sub">Coaching</span>
+          </span>
         </a>
-        <p class="eyebrow">Legal</p>
-        <h1>Privacy &amp; Terms</h1>
-        <p>How we handle your information and the terms that apply when you use this site or apply for a profit audit.</p>
-
-        <nav class="legal-nav" aria-label="Legal sections">
-          <a href="#privacy">Privacy Policy</a>
-          <a href="#terms">Terms of Service</a>
-        </nav>
-
-        <section class="legal-section" id="privacy">
-          <h2>Privacy Policy</h2>
-          <p class="legal-updated">Last updated: October 19, 2026</p>
-
-          <h3>Information we collect</h3>
-          <p>When you apply for an audit or subscribe to profit tips, we collect the details you provide: your name, email address, store URL, revenue range, platform, business challenge and goals. We may also collect basic usage data such as pages viewed and referring links if analytics are enabled.</p>
-
-          <h3>How we use your information</h3>
-          <ul>
-            <li>To review your application and respond within 24–48 hours.</li>
-            <li>To prepare relevant profit opportunities for your store.</li>
-            <li>To send the weekly profit tips you asked for.</li>
-            <li>To improve the site, our content and our services.</li>
-          </ul>
-
-          <h3>Confidentiality</h3>
-          <p>Store data, account access and commercial information shared during an engagement are treated as confidential. We sign an NDA before reviewing sensitive business information. We do not sell your personal information.</p>
-
-          <h3>Sharing and processors</h3>
-          <p>We may use trusted service providers for email delivery, scheduling, analytics and file storage. These providers only receive the information needed to perform their service. We may disclose information if required by law.</p>
-
-          <h3>Retention and your choices</h3>
-          <p>We keep application details for as long as needed to evaluate and respond, and engagement records for legitimate business and legal purposes. You can ask us to access, correct or delete your personal information, or unsubscribe from marketing emails at any time.</p>
-
-          <h3>Contact</h3>
-          <p>Questions about privacy? Email <a href="mailto:hello@profitgrowthcoaching.com" style="color:var(--green)">hello@profitgrowthcoaching.com</a>.</p>
-        </section>
-
-        <section class="legal-section" id="terms">
-          <h2>Terms of Service</h2>
-          <p class="legal-updated">Last updated: October 19, 2026</p>
-
-          <h3>Coaching services</h3>
-          <p>Profit Growth Coaching provides education, analysis and advisory services. We do not provide legal, tax or accounting advice, and we do not guarantee any specific financial outcome. Case study figures are illustrative, results vary by store and niche, and your results depend on your market, costs and execution.</p>
-
-          <h3>Applications and programs</h3>
-          <p>Submitting an application does not create a coaching agreement. If there is a fit, we will send program details, scope and pricing for your review. Program fees, payment terms and cancellation rights are set out in the applicable agreement.</p>
-
-          <h3>Website use</h3>
-          <p>You agree not to misuse this site, attempt to gain unauthorised access, scrape it at scale, or use its content in a way that infringes our rights or the rights of others. All branding, copy, design and materials on this site are owned by Profit Growth Coaching unless otherwise noted.</p>
-
-          <h3>No warranties</h3>
-          <p>This site and its content are provided “as is” without warranties of any kind, express or implied. We work to keep information accurate and current, but we do not warrant that the site will be uninterrupted, error-free or complete.</p>
-
-          <h3>Limitation of liability</h3>
-          <p>To the fullest extent permitted by law, Profit Growth Coaching is not liable for indirect, incidental or consequential damages arising from your use of this site. Nothing in these terms limits rights that cannot be limited by law.</p>
-
-          <h3>Contact</h3>
-          <p>Questions about these terms? Email <a href="mailto:hello@profitgrowthcoaching.com" style="color:var(--green)">hello@profitgrowthcoaching.com</a>.</p>
-
-          <p class="legal-note">This page is sample template copy for a demonstration site. Have it reviewed by qualified counsel and replace the placeholder business details before publishing.</p>
-        </section>
+        <a class="btn btn--ghost btn--sm" href="/">Back to site</a>
       </div>
-    </div>
-  </main>
+    </header>
 
-  <footer class="legal-footer">
-    <div class="container">
-      <p>© <span id="legal-year">2026</span> Profit Growth Coaching. All rights reserved.</p>
-      <p><a href="index.html">Home</a> &nbsp;·&nbsp; <a href="#privacy">Privacy</a> &nbsp;·&nbsp; <a href="#terms">Terms</a></p>
-    </div>
-  </footer>
-  <script>document.getElementById('legal-year').textContent = new Date().getFullYear();</script>
+    <main class="page-main page-main--top" id="legal-content">
+      <div class="container">
+        <div class="legal-wrap">
+          <a class="eyebrow" href="/" style="text-decoration:none">
+            <svg class="icon" aria-hidden="true" style="transform:rotate(180deg)"><use href="#i-arrow-right"/></svg>
+            Back to Profit Growth Coaching
+          </a>
+          <h1>Privacy, Terms &amp; Accessibility</h1>
+          <p>How we handle your information, the terms that apply when you use this site or apply for a profit audit, and what we are doing to keep the site usable for everyone.</p>
+
+          <nav class="legal-nav" aria-label="Legal sections">
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#cookies">Cookies &amp; analytics</a>
+            <a href="#terms">Terms of Service</a>
+            <a href="#accessibility">Accessibility</a>
+          </nav>
+
+          <section class="legal-section" id="privacy">
+            <h2>Privacy Policy</h2>
+            <p class="legal-updated">Last updated: 20 October 2026</p>
+
+            <h3>Who we are</h3>
+            <p>Profit Growth Coaching ("we", "us") provides profit-focused coaching and advisory services to ecommerce businesses. This policy explains what we collect, why, and the choices you have. You can reach us at <a href="mailto:hello@profitgrowthcoaching.com">hello@profitgrowthcoaching.com</a>.</p>
+
+            <h3>Information you give us</h3>
+            <p>When you apply for a profit audit, subscribe to profit tips, or contact us, we collect the details you choose to provide. This typically includes:</p>
+            <ul>
+              <li>Your name and email address.</li>
+              <li>Your store URL, platform and monthly revenue range.</li>
+              <li>Your biggest business challenge and any goals or notes you add.</li>
+              <li>The program you are interested in, if you select one.</li>
+            </ul>
+
+            <h3>Information we collect automatically</h3>
+            <p>We record basic, aggregate interaction data so we can see which parts of the page are useful — for example which sections people read, whether the calculator is opened, and how far down the page visitors scroll. This data is stored on our own server and is tied to a random session identifier, not to your name or email address. We do not use it to build advertising profiles.</p>
+            <p>Our web server also keeps standard request logs, which include IP addresses, for security and abuse prevention. When you submit an application we store a one-way, daily-salted hash of your IP address and your browser's user-agent string alongside it, so we can detect duplicate or automated submissions without keeping your raw IP. The hash cannot be reversed into your address and changes every day.</p>
+            <p>Where your browser sends a <strong>Do Not Track</strong> or <strong>Global Privacy Control</strong> signal, we stop collecting this interaction data for your visit.</p>
+
+            <h3>How we use your information</h3>
+            <ul>
+              <li>To review your application and respond, usually within 24–48 hours.</li>
+              <li>To prepare relevant profit opportunities for your store.</li>
+              <li>To send the profit tips you explicitly asked to receive.</li>
+              <li>To improve this site, our content and our services.</li>
+              <li>To meet legal, tax and accounting obligations.</li>
+            </ul>
+            <p>We rely on your consent for marketing email, and on legitimate interests for responding to enquiries and keeping the site secure. You can withdraw consent at any time.</p>
+
+            <h3>Confidentiality</h3>
+            <p>Store data, account access and commercial information shared during an engagement are treated as confidential. We sign an NDA before reviewing sensitive business information. <strong>We do not sell your personal information</strong>, and we do not share it with advertisers or data brokers.</p>
+
+            <h3>Who we share it with</h3>
+            <p>We use a small number of service providers (processors) who only receive what they need to do their job:</p>
+            <div class="legal-table-scroll" role="region" tabindex="0" aria-label="Data processors table, scroll horizontally to see every column">
+              <table class="legal-table">
+                <thead>
+                  <tr><th scope="col">Provider type</th><th scope="col">Purpose</th><th scope="col">Data involved</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Hosting</td><td>Serving this site and storing applications</td><td>All data described above</td></tr>
+                  <tr><td>Email delivery</td><td>Sending replies and profit tips</td><td>Name, email address</td></tr>
+                  <tr><td>Scheduling</td><td>Booking profit audit calls, if you choose a time</td><td>Name, email, chosen slot</td></tr>
+                  <tr><td>File storage</td><td>Sharing working documents during an engagement</td><td>Engagement materials only</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>We may also disclose information where we are legally required to, or to protect our rights. If we are ever acquired or merged, your information may transfer as part of that transaction; we would tell you first.</p>
+
+            <h3>Retention</h3>
+            <p>We keep applications for up to 24 months so we can respond and follow up. Newsletter subscribers stay on the list until they unsubscribe. Engagement and financial records are kept as long as required for tax and legal purposes. Interaction analytics are retained in aggregate for up to 14 months. After these periods, data is deleted or aggregated so it can no longer identify you.</p>
+
+            <h3>Your rights</h3>
+            <p>Depending on where you live, you may have the right to:</p>
+            <ul>
+              <li>Access a copy of the personal information we hold about you.</li>
+              <li>Correct information that is inaccurate or incomplete.</li>
+              <li>Delete your information, where we do not have a legal reason to keep it.</li>
+              <li>Object to or restrict certain processing, including direct marketing.</li>
+              <li>Receive your data in a portable format, or ask us to send it elsewhere.</li>
+              <li>Withdraw consent for marketing at any time, using the unsubscribe link in any email.</li>
+              <li>Lodge a complaint with your local data protection authority.</li>
+            </ul>
+            <p>Email <a href="mailto:hello@profitgrowthcoaching.com">hello@profitgrowthcoaching.com</a> to exercise any of these. We aim to respond within 30 days and will never charge you for a reasonable request.</p>
+
+            <h3>Security</h3>
+            <p>We use HTTPS in transit, restrict access to application data, and keep our software patched. No system is perfectly secure, so we cannot guarantee absolute security — but if a breach ever affects your rights, we will notify you and the relevant authority as required.</p>
+
+            <h3>International transfers</h3>
+            <p>We work remotely with clients worldwide, so your information may be processed outside your country. Where we transfer personal data internationally, we use appropriate safeguards such as standard contractual clauses.</p>
+
+            <h3>Children</h3>
+            <p>This site and our services are intended for business owners and are not directed at anyone under 18. We do not knowingly collect information from children. If you believe a child has given us information, contact us and we will delete it.</p>
+
+            <h3>Changes to this policy</h3>
+            <p>We may update this policy as our practices evolve. We will change the "last updated" date above, and for significant changes we will make the notice prominent on the site.</p>
+          </section>
+
+          <section class="legal-section" id="cookies">
+            <h2>Cookies &amp; analytics</h2>
+            <p class="legal-updated">Last updated: 20 October 2026</p>
+
+            <h3>We do not use advertising cookies</h3>
+            <p>This site does not load third-party advertising, retargeting or social pixels, and it does not set cookies for tracking purposes. That is why you will not see a cookie consent banner here: there is nothing to consent to.</p>
+
+            <h3>What we do use</h3>
+            <ul>
+              <li><strong>First-party interaction analytics.</strong> Anonymous, cookie-free events sent to our own server (see "Information we collect automatically" above). Disabled automatically when your browser sends a Do Not Track or Global Privacy Control signal.</li>
+              <li><strong>Local browser storage.</strong> If you start the application form, run the profit check or use the profit calculator, we save your inputs in your own browser's local storage (keys prefixed <code>pgc_</code>) so you do not lose your work if you refresh. This never leaves your device unless you submit the form, and you can clear it at any time.</li>
+              <li><strong>Session identifier.</strong> A random value created for the current visit and kept in your browser's session storage. It groups anonymous events into one visit, is not a cookie, and is discarded when you close the tab.</li>
+            </ul>
+
+            <h3>Controlling tracking</h3>
+            <p>You can enable "Do Not Track" or Global Privacy Control in your browser settings and our analytics will stop recording your visit. You can also clear your browser storage at any time to remove saved form drafts and calculator inputs.</p>
+          </section>
+
+          <section class="legal-section" id="terms">
+            <h2>Terms of Service</h2>
+            <p class="legal-updated">Last updated: 20 October 2026</p>
+
+            <h3>Coaching services</h3>
+            <p>Profit Growth Coaching provides education, analysis and advisory services. We do not provide legal, tax or accounting advice. We help you understand your numbers and decide what to do next; the decisions and their execution remain yours.</p>
+
+            <h3>No earnings or results guarantee</h3>
+            <p><strong>We do not guarantee any specific financial outcome.</strong> Any figures shown on this site — including margin-point improvements, revenue examples and case study snapshots — are illustrative and describe past client situations. They are not a promise, projection or prediction of your results. Your outcome depends on your market, your costs, your team, your execution and factors outside our control. Nothing on this site should be read as a guarantee of profit, income or return on investment.</p>
+
+            <h3>Applications and programs</h3>
+            <p>Submitting an application does not create a coaching agreement and does not obligate either of us. If there is a fit, we will send program details, scope, deliverables and pricing for your review. Program fees, payment terms, cancellation rights and refund conditions are set out in the applicable written agreement, which prevails over anything on this site.</p>
+
+            <h3>Your responsibilities</h3>
+            <p>To get value from coaching you agree to provide accurate information, give reasonable access to the accounts and data we need, and have at least one decision-maker available for scheduled calls. Where we agree on actions, you are responsible for implementing them in your business.</p>
+
+            <h3>Website use</h3>
+            <p>You agree not to misuse this site, attempt to gain unauthorised access, interfere with its normal operation, scrape it at scale, or use its content in a way that infringes our rights or the rights of others. We may suspend access where we reasonably believe these terms have been breached.</p>
+
+            <h3>Intellectual property</h3>
+            <p>All branding, copy, design, frameworks, templates and materials on this site are owned by Profit Growth Coaching unless otherwise noted. Materials we share with clients are licensed for use inside your business; they may not be resold, published as your own, or shared with competitors of ours.</p>
+
+            <h3>Third-party links</h3>
+            <p>This site may link to third-party sites and tools. We do not control them and are not responsible for their content, availability or privacy practices. Following those links is at your own discretion.</p>
+
+            <h3>No warranties</h3>
+            <p>This site and its content are provided "as is" and "as available" without warranties of any kind, express or implied, including fitness for a particular purpose. We work to keep information accurate and current, but we do not warrant that the site will be uninterrupted, error-free or complete.</p>
+
+            <h3>Limitation of liability</h3>
+            <p>To the fullest extent permitted by law, Profit Growth Coaching is not liable for indirect, incidental, special or consequential damages, or for lost profits, revenue or data, arising from your use of this site. Where liability cannot be excluded, our total liability is limited to the amount you paid us in the twelve months before the claim. Nothing in these terms limits rights that cannot be limited by law.</p>
+
+            <h3>Governing law</h3>
+            <p>These terms are governed by the laws of the jurisdiction in which Profit Growth Coaching is established, without regard to conflict-of-law rules. Before starting formal proceedings, both parties agree to attempt to resolve any dispute in good faith through direct discussion.</p>
+
+            <h3>Changes to these terms</h3>
+            <p>We may update these terms from time to time. The version published on this page at the time you use the site applies, and the "last updated" date above will change when we make revisions. Continued use after a change means you accept the updated terms.</p>
+
+            <h3>Contact</h3>
+            <p>Questions about these terms? Email <a href="mailto:hello@profitgrowthcoaching.com">hello@profitgrowthcoaching.com</a>.</p>
+          </section>
+
+          <section class="legal-section" id="accessibility">
+            <h2>Accessibility</h2>
+            <p class="legal-updated">Last updated: 20 October 2026</p>
+
+            <h3>Our commitment</h3>
+            <p>We want everyone who needs help with ecommerce profitability to be able to use this site, including people who use screen readers, keyboard navigation, screen magnification or reduced-motion settings. We aim to meet the <strong>Web Content Accessibility Guidelines (WCAG) 2.2 Level AA</strong>.</p>
+
+            <h3>What we have done</h3>
+            <ul>
+              <li>Semantic HTML landmarks, one main heading per page, and a logical heading order.</li>
+              <li>A "skip to content" link and full keyboard operability, including visible focus states.</li>
+              <li>Dismissible overlays that trap and return focus, and that close with the Escape key.</li>
+              <li>Colour contrast checked against WCAG AA for text and interactive elements.</li>
+              <li>Animations and reveal effects disabled automatically under <code>prefers-reduced-motion</code>.</li>
+              <li>Labelled form fields, inline error messages announced to assistive technology, and errors that do not rely on colour alone.</li>
+              <li>Meaningful alternative text for informative images and decorative images hidden from assistive technology.</li>
+              <li>Charts and comparisons backed by real text and table data rather than images alone.</li>
+              <li>The site works without JavaScript: content is readable, navigation works, and forms submit normally.</li>
+            </ul>
+
+            <h3>Known limitations</h3>
+            <p>We are not aware of any blocking accessibility issues, but interactive charts and sliders are the hardest areas to make perfect. If any part of this site does not work for you, that is a bug we want to fix. We test with current versions of Chrome, Safari and Firefox, and with keyboard-only navigation.</p>
+
+            <h3>Feedback</h3>
+            <p>If you hit an accessibility barrier, email <a href="mailto:hello@profitgrowthcoaching.com">hello@profitgrowthcoaching.com</a> with the page and what happened. We aim to acknowledge accessibility reports within 5 working days and to provide the information you need in another format if the site is blocking you.</p>
+          </section>
+
+          <p class="legal-note"><strong>Template notice:</strong> this page is sample copy written for a demonstration site. Replace the placeholder business name, jurisdiction and provider details, and have the final text reviewed by qualified counsel before publishing.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <div class="container">
+        <p>© <span data-year>2026</span> Profit Growth Coaching. All rights reserved.</p>
+        <nav aria-label="Footer">
+          <a href="/">Home</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#cookies">Cookies</a>
+          <a href="#terms">Terms</a>
+          <a href="#accessibility">Accessibility</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script>document.querySelectorAll('[data-year]').forEach(function (n) { n.textContent = new Date().getFullYear(); });</script>
 </body>
 </html>

@@ -1,0 +1,7 @@
+# Profit Growth Coaching
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /thank-you.html
+
+Sitemap: https://profitgrowthcoaching.com/sitemap.xml

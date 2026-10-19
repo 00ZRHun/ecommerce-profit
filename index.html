@@ -3,55 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Profit Growth Coaching — Grow Revenue Without Letting Profit Disappear</title>
-  <meta name="description" content="Ecommerce profitability coaching for founders who want more profit, not just more sales. Fix leaking margins, optimize ad spend, and build a more valuable business." />
-  <meta name="theme-color" content="#050b14" />
+  <title>Profit Growth Coaching — Add 3–8 Margin Points in 90 Days</title>
+  <meta name="description" content="Profit-first coaching for ecommerce founders doing $30k–$1M+/month. We find the margin leaking out of your store and help your team fix it in 90 days — without spending more on ads." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://profitgrowthcoaching.com/" />
+  <meta name="theme-color" content="#040a13" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f4faf7" media="(prefers-color-scheme: light)" />
   <meta name="color-scheme" content="dark" />
+
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Profit Growth Coaching — Profit-first ecommerce coaching" />
-  <meta property="og:description" content="We help ecommerce brands increase net profit, fix margin leaks, and build a more valuable business in 90–120 days." />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="Profit Growth Coaching" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta property="og:url" content="https://profitgrowthcoaching.com/" />
+  <meta property="og:title" content="Profit Growth Coaching — Add 3–8 Margin Points in 90 Days" />
+  <meta property="og:description" content="Profit-first coaching for ecommerce founders. Find the margin leaking out of your store and fix it in 90 days — without spending more on ads." />
+  <meta property="og:image" content="https://profitgrowthcoaching.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Profit Growth Coaching — keep more of every dollar you sell." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Profit Growth Coaching — Add 3–8 Margin Points in 90 Days" />
+  <meta name="twitter:description" content="Profit-first coaching for ecommerce founders doing $30k–$1M+/month. Free profit audit." />
+  <meta name="twitter:image" content="https://profitgrowthcoaching.com/assets/og-image.png" />
+
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/founder.jpg" as="image" fetchpriority="high" />
+  <link rel="stylesheet" href="/styles.css" />
   <script>
     document.documentElement.classList.replace('no-js', 'js');
-    // If the enhancement layer fails to load, keep all content visible.
+    // If the enhancement layer never arrives (blocked, offline, CSP failure),
+    // fall back to the fully usable no-JS presentation instead of leaving the
+    // form stuck on step one with hidden content.
     window.setTimeout(function () {
-      if (!window.__pgcReady) document.documentElement.classList.remove('js');
+      if (window.__pgcReady) return;
+      document.documentElement.classList.remove('js');
+      document.documentElement.classList.add('no-js');
     }, 2500);
   </script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Profit Growth Coaching",
-      "description": "Ecommerce profitability coaching that helps brands increase net profit, fix margin leaks, optimize ad spend, and build a more valuable business.",
-      "priceRange": "$$$",
-      "areaServed": "Worldwide",
-      "serviceType": "Ecommerce profitability coaching",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Coaching Programs",
-        "itemListElement": [
-          { "@type": "Offer", "name": "Growth Accelerator", "price": "2500", "priceCurrency": "USD" },
-          { "@type": "Offer", "name": "Profit Partner", "price": "4500", "priceCurrency": "USD" },
-          { "@type": "Offer", "name": "Executive Partner", "price": "7500", "priceCurrency": "USD" }
-        ]
-      }
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://profitgrowthcoaching.com/#organization",
+          "name": "Profit Growth Coaching",
+          "url": "https://profitgrowthcoaching.com/",
+          "logo": "https://profitgrowthcoaching.com/assets/favicon.svg",
+          "description": "Profit-first ecommerce coaching for founders who want to keep more of what they earn.",
+          "email": "hello@profitgrowthcoaching.com",
+          "areaServed": "Worldwide",
+          "knowsAbout": ["Ecommerce profitability", "Contribution margin", "Retention", "Customer acquisition cost", "Pricing strategy"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://profitgrowthcoaching.com/#website",
+          "url": "https://profitgrowthcoaching.com/",
+          "name": "Profit Growth Coaching",
+          "publisher": { "@id": "https://profitgrowthcoaching.com/#organization" }
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://profitgrowthcoaching.com/#service",
+          "name": "Profit Growth Coaching",
+          "url": "https://profitgrowthcoaching.com/",
+          "description": "Ecommerce profitability coaching that helps brands increase net profit, fix margin leaks, optimize ad spend, and build a more valuable business.",
+          "priceRange": "$$$",
+          "areaServed": "Worldwide",
+          "serviceType": "Ecommerce profitability coaching",
+          "provider": { "@id": "https://profitgrowthcoaching.com/#organization" },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Coaching Programs",
+            "itemListElement": [
+              { "@type": "Offer", "name": "Growth Accelerator", "price": "2500", "priceCurrency": "USD", "description": "Monthly profit coaching for stores doing $30k–$100k per month." },
+              { "@type": "Offer", "name": "Profit Partner", "price": "4500", "priceCurrency": "USD", "description": "Hands-on 90-day profit coaching for stores doing $100k–$500k per month." },
+              { "@type": "Offer", "name": "Executive Partner", "price": "7500", "priceCurrency": "USD", "description": "Done-with-you profit partnership for brands doing $500k+ per month." }
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://profitgrowthcoaching.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How is this different from an agency?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Agencies are usually paid to spend more. We are paid to make your business more profitable. We do not take over your ad account. We coach your team, audit the numbers, and build a prioritized profit plan with weekly accountability." }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you work with all niches?",
+              "acceptedAnswer": { "@type": "Answer", "text": "We specialize in ecommerce brands doing $30k–$1M+ per month. We have worked across home, apparel, beauty, pets, and supplements. If we do not think we can move your profit, we will tell you on the audit call." }
+            },
+            {
+              "@type": "Question",
+              "name": "How long until we see results?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Most clients see margin and cash-flow improvements within the first 30–60 days. Meaningful compounding usually shows in 90–120 days. Results depend on your starting point and how quickly your team executes." }
+            },
+            {
+              "@type": "Question",
+              "name": "What do you need from us?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Access to your store analytics, ad accounts, P&L, and one decision-maker for weekly calls. The more we can see, the faster we can find the leaks. We sign an NDA before anything is shared." }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you manage ad spend?",
+              "acceptedAnswer": { "@type": "Answer", "text": "No. We help you make better decisions about ad spend and structure, and we work with your media buyer or in-house team. If you do not have one, we can recommend trusted partners. We do not take a commission on referrals." }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there a contract?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Growth Accelerator is month-to-month. Profit Partner and Executive Partner are 90-day engagements so there is enough time to implement. There is no long-term lock-in, and you can pause or cancel after the initial term." }
+            },
+            {
+              "@type": "Question",
+              "name": "What does coaching cost?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Programs start at $2,500 per month. The right fit depends on your revenue, margin, and how much implementation support you need. We recommend a program only after the audit, and we will tell you if a lower tier is the better fit." }
+            },
+            {
+              "@type": "Question",
+              "name": "What if we're not a fit?",
+              "acceptedAnswer": { "@type": "Answer", "text": "We will tell you on the audit call and point you toward the right next step, even if that is not us. We keep the client roster small and only take on brands we believe we can help." }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you handle our data?",
+              "acceptedAnswer": { "@type": "Answer", "text": "We sign an NDA before accessing anything, limit access to the people working on your account, and use your data only to deliver the engagement. We do not sell data or share it with advertisers. See our privacy policy for details." }
+            }
+          ]
+        }
+      ]
     }
   </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
   <!-- Icon sprite -->
   <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
     <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
     <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m6 13 6 6 6-6"/></symbol>
     <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 4.5 4.5L19.5 6.5"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.6 2.6L16.2 9"/></symbol>
+    <symbol id="i-x-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m9 9 6 6M15 9l-6 6"/></symbol>
     <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
     <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
@@ -83,12 +183,22 @@
     <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
     <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3Z"/><path d="m19 15 .8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15Z"/></symbol>
     <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4"/><circle cx="12" cy="17" r=".7" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="8" r=".7" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.2l1.1-6.2L3 9.6l6.2-.9L12 3Z"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24"><path d="M9 11H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6c0 3-1.5 5-4 6"/><path d="M20 11h-4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6c0 3-1.5 5-4 6"/></symbol>
     <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r=".8" fill="currentColor" stroke="none"/></symbol>
     <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2Z"/></symbol>
     <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20"/></symbol>
-    <symbol id="i-quote" viewBox="0 0 24 24"><path d="M9 11H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6c0 3-1.5 5-4 6"/><path d="M20 11h-4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6c0 3-1.5 5-4 6"/></symbol>
   </svg>
+
+  <div class="announce" data-announce>
+    <div class="container announce-inner">
+      <p><span class="announce-dot" aria-hidden="true"></span><strong>New:</strong> take the 2-minute Profit Leaks check and see what's leaking out of your store.</p>
+      <a href="#scorecard" data-track="announce_scorecard">Check my leaks <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+    </div>
+  </div>
 
   <!-- Header -->
   <header class="site-header" data-header>
@@ -112,17 +222,21 @@
       </a>
 
       <nav class="primary-nav" aria-label="Primary">
-        <a class="nav-link is-active" href="#home">Home</a>
-        <a class="nav-link" href="#how-it-works">How It Works</a>
+        <a class="nav-link" href="#problem">Why profit leaks</a>
+        <a class="nav-link" href="#how-it-works">The system</a>
+        <a class="nav-link" href="#scorecard">Scorecard</a>
         <a class="nav-link" href="#results">Results</a>
         <a class="nav-link" href="#programs">Programs</a>
-        <button class="nav-link nav-link--button" type="button" data-open-calculator>Calculator</button>
-        <a class="nav-link" href="#faq">FAQ</a>
+        <a class="nav-link" href="#about">About</a>
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn--primary btn--sm header-cta" href="#apply">
-          Apply for a Profit Audit
+        <button class="header-calc" type="button" data-open-calculator data-track="calculator_open_nav">
+          <svg class="icon" aria-hidden="true"><use href="#i-banknote"/></svg>
+          <span>Calculator</span>
+        </button>
+        <a class="btn btn--primary btn--sm header-cta" href="#apply" data-track="cta_header">
+          Get my free audit
           <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
         </a>
         <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel" data-menu-toggle>
@@ -133,18 +247,20 @@
 
     <div class="mobile-panel" id="mobile-panel" data-mobile-panel>
       <nav class="mobile-nav" aria-label="Mobile">
-        <a class="mobile-link" href="#home">Home</a>
-        <a class="mobile-link" href="#how-it-works">How It Works</a>
-        <a class="mobile-link" href="#results">Results</a>
-        <a class="mobile-link" href="#programs">Programs</a>
-        <button class="mobile-link mobile-link--button" type="button" data-open-calculator>Profit Calculator</button>
-        <a class="mobile-link" href="#faq">FAQ</a>
+        <a class="mobile-link" href="#problem">Why profit leaks <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="mobile-link" href="#how-it-works">The system <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="mobile-link" href="#scorecard">Profit scorecard <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="mobile-link" href="#results">Results <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="mobile-link" href="#programs">Programs <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="mobile-link" href="#about">About <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <button class="mobile-link mobile-link--button" type="button" data-open-calculator data-track="calculator_open_mobile">Profit calculator <svg class="icon" aria-hidden="true"><use href="#i-banknote"/></svg></button>
+        <a class="mobile-link" href="#faq">FAQ <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       </nav>
-      <a class="btn btn--primary mobile-cta" href="#apply">
-        Apply for a Profit Growth Audit
+      <a class="btn btn--primary mobile-cta" href="#apply" data-track="cta_mobile_menu">
+        Get my free profit audit
         <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
       </a>
-      <p class="mobile-note">Free audit · No obligation · Reply in 24–48h</p>
+      <p class="mobile-note">Free 30-minute audit · No obligation · Reply in 24–48h</p>
     </div>
   </header>
   <div class="nav-backdrop" data-nav-backdrop aria-hidden="true"></div>
@@ -161,29 +277,36 @@
 
       <div class="container hero-inner">
         <div class="hero-copy" data-reveal>
-          <p class="eyebrow eyebrow--inline"><span class="pulse-dot"></span>Profit-first coaching for ecommerce brands</p>
+          <p class="eyebrow eyebrow--inline"><span class="pulse-dot"></span>Profit-first coaching for ecommerce founders</p>
           <h1 class="hero-title">
-            <span class="hero-line">Grow Revenue</span>
-            <span class="hero-line">Without Letting</span>
-            <span class="hero-line accent">Profit Disappear</span>
+            <span class="hero-line">Keep more of</span>
+            <span class="hero-line accent">every dollar</span>
+            <span class="hero-line">you sell.</span>
           </h1>
-          <p class="hero-lede">Ecommerce profitability coaching that helps you increase profit, not just sales. We fix leaking margins, optimize spend, and build a more valuable business.</p>
+          <p class="hero-lede">For ecommerce brands doing <strong>$30k–$1M+ per month</strong>. We find the margin leaking out of your store and help your team fix it in 90 days — without spending more on ads.</p>
+
+          <ul class="hero-proof-inline" aria-label="At a glance">
+            <li><strong>3–8 pts</strong><span>margin upside we target</span></li>
+            <li><strong>90 days</strong><span>to a measurable lift</span></li>
+            <li><strong>160+</strong><span>stores coached</span></li>
+          </ul>
 
           <div class="hero-actions">
-            <a class="btn btn--primary" href="#apply">
-              Apply for a Profit Growth Audit
+            <a class="btn btn--primary btn--lg" href="#apply" data-track="cta_hero">
+              Get my free profit audit
               <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
             </a>
-            <a class="btn btn--ghost" href="#results">
-              See Results
+            <a class="btn btn--ghost btn--lg" href="#scorecard" data-track="cta_hero_scorecard">
+              Take the 2-min profit check
               <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg>
             </a>
           </div>
+          <p class="hero-micro">Free 30-minute audit · No obligation · Straight answer in 24–48h</p>
 
           <ul class="hero-trust">
-            <li><span class="trust-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Data-driven, no fluff</li>
-            <li><span class="trust-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Ecommerce focused</li>
-            <li><span class="trust-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Results in 90–120 days</li>
+            <li><span class="trust-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Founder-led, no junior account managers</li>
+            <li><span class="trust-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>NDA before we see your numbers</li>
+            <li><span class="trust-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>No commission on ad spend</li>
           </ul>
         </div>
 
@@ -205,7 +328,7 @@
             </svg>
 
             <figure class="portrait-frame">
-              <img src="assets/founder.jpg" alt="Founder and profit coach at Profit Growth Coaching" width="800" height="1200" fetchpriority="high" />
+              <img src="/assets/founder.jpg" alt="Founder of Profit Growth Coaching" width="800" height="1200" fetchpriority="high" />
               <figcaption class="sr-only">Profit Growth Coaching founder</figcaption>
             </figure>
             <span class="portrait-rim" aria-hidden="true"></span>
@@ -213,7 +336,7 @@
             <div class="hero-floats">
               <div class="float-card float-card--margin">
                 <div class="float-card-top">
-                  <span class="float-card-label">Profit Margin</span>
+                  <span class="float-card-label">Net Profit</span>
                   <span class="float-icon"><svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg></span>
                 </div>
                 <div class="float-card-value"><span data-counter="36" data-prefix="+" data-suffix="%">+36%</span></div>
@@ -231,20 +354,20 @@
 
               <div class="float-card float-card--ads">
                 <div class="float-card-top">
-                  <span class="float-card-label">Ad Efficiency</span>
+                  <span class="float-card-label">Contribution Margin</span>
                   <span class="float-icon"><svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg></span>
                 </div>
-                <div class="float-card-value"><span data-counter="28" data-prefix="+" data-suffix="%">+28%</span></div>
-                <div class="float-card-meta">ROAS improvement</div>
+                <div class="float-card-value"><span data-counter="4.2" data-decimals="1" data-prefix="+" data-suffix=" pts">+4.2 pts</span></div>
+                <div class="float-card-meta">in 90 days</div>
               </div>
 
               <div class="float-card float-card--net">
                 <div class="float-card-top">
-                  <span class="float-card-label">Net Profit</span>
+                  <span class="float-card-label">Cash Released</span>
                   <span class="float-icon"><svg class="icon" aria-hidden="true"><use href="#i-banknote"/></svg></span>
                 </div>
-                <div class="float-card-value"><span data-counter="42" data-prefix="+" data-suffix="%">+42%</span></div>
-                <div class="float-card-meta">vs previous 90 days</div>
+                <div class="float-card-value"><span data-counter="180" data-prefix="$" data-suffix="k">$180k</span></div>
+                <div class="float-card-meta">annualized</div>
               </div>
             </div>
           </div>
@@ -257,30 +380,94 @@
             <span class="proof-icon"><svg class="icon" aria-hidden="true"><use href="#i-dollar"/></svg></span>
             <div>
               <div class="proof-value"><span data-counter="48.7" data-decimals="1" data-prefix="$" data-suffix="M+">$48.7M+</span></div>
-              <div class="proof-label">Revenue Optimized</div>
+              <div class="proof-label">Revenue optimized</div>
             </div>
           </div>
           <div class="proof-card">
             <span class="proof-icon"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></span>
             <div>
               <div class="proof-value"><span data-counter="160" data-suffix="+">160+</span></div>
-              <div class="proof-label">Stores Coached</div>
+              <div class="proof-label">Stores coached</div>
             </div>
           </div>
           <div class="proof-card">
             <span class="proof-icon"><svg class="icon" aria-hidden="true"><use href="#i-percent"/></svg></span>
             <div>
               <div class="proof-value"><span data-counter="28" data-suffix="%">28%</span></div>
-              <div class="proof-label">Avg. Profit Increase</div>
+              <div class="proof-label">Avg. net profit lift</div>
             </div>
           </div>
           <div class="proof-card">
             <span class="proof-icon"><svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg></span>
             <div>
               <div class="proof-value">3–6x</div>
-              <div class="proof-label">Typical ROI</div>
+              <div class="proof-label">Typical return on coaching</div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The growth trap -->
+    <section class="section problem" id="problem">
+      <div class="container">
+        <div class="problem-layout">
+          <div class="problem-copy" data-reveal>
+            <p class="eyebrow">The growth trap</p>
+            <h2>Revenue is up. Profit is flat. You're doing more for less.</h2>
+            <p class="problem-lede">Most stores don't have a traffic problem. They have a margin problem hiding behind healthy top-line numbers. The more you sell, the more the leak costs you.</p>
+
+            <div class="trap-equation" aria-label="The growth trap equation">
+              <div><span>More revenue</span><strong>+40%</strong></div>
+              <span class="trap-op" aria-hidden="true">+</span>
+              <div><span>Ad spend</span><strong>+55%</strong></div>
+              <span class="trap-op" aria-hidden="true">=</span>
+              <div class="trap-result"><span>Net profit</span><strong>+2%</strong></div>
+            </div>
+            <p class="trap-note">Illustrative pattern from stores we audit. The numbers change; the leak doesn't.</p>
+
+            <a class="btn btn--ghost" href="#scorecard" data-track="problem_scorecard">
+              See where your profit is leaking
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+            </a>
+          </div>
+
+          <ul class="pain-list" data-reveal style="--delay:100ms">
+            <li class="pain-card">
+              <span class="pain-icon"><svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg></span>
+              <div>
+                <h3>You grow revenue to grow profit — but profit doesn't follow.</h3>
+                <p>Ad costs, discounts and fees absorb the upside. Your bank account doesn't match your dashboard.</p>
+              </div>
+            </li>
+            <li class="pain-card">
+              <span class="pain-icon"><svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg></span>
+              <div>
+                <h3>You don't know your true contribution margin per order.</h3>
+                <p>ROAS looks fine. The P&amp;L tells a different story. Without unit economics, every scaling decision is a guess.</p>
+              </div>
+            </li>
+            <li class="pain-card">
+              <span class="pain-icon"><svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg></span>
+              <div>
+                <h3>Discounts and promos have trained your customers to wait.</h3>
+                <p>Revenue spikes, margin doesn't. Full-price sell-through falls and next month starts further behind.</p>
+              </div>
+            </li>
+            <li class="pain-card">
+              <span class="pain-icon"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
+              <div>
+                <h3>Every decision still runs through you.</h3>
+                <p>Your team executes, but no one owns the profit number. You become the bottleneck for every test and trade-off.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="math-callout" data-reveal>
+          <span class="math-icon"><svg class="icon" aria-hidden="true"><use href="#i-percent"/></svg></span>
+          <p><strong>One margin point matters more than you think.</strong> On $250k per month, a single point of net margin is <strong>$30,000 a year</strong> in pure profit — no extra traffic, no extra ad spend, no extra team.</p>
+          <a href="#scorecard">Find your number <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
         </div>
       </div>
     </section>
@@ -289,115 +476,168 @@
     <section class="section levers" id="how-it-works">
       <div class="container">
         <header class="section-head" data-reveal>
-          <p class="eyebrow">The profit levers</p>
-          <h2>We Improve Profit Across Every Lever</h2>
-          <p>Most stores focus on revenue. We find the margin hiding inside the business you already have.</p>
+          <p class="eyebrow">The profit operating system</p>
+          <h2>Six levers. One profit plan.</h2>
+          <p>Most stores focus on revenue. We find the margin hiding inside the business you already have — then help your team pull the levers that move it.</p>
         </header>
 
         <div class="lever-grid">
           <article class="lever-card" data-reveal style="--delay:0ms">
+            <span class="lever-num">01</span>
             <span class="lever-icon"><svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg></span>
-            <h3>Purchase Costs</h3>
-            <p>Negotiate smarter and increase gross margin.</p>
+            <h3>Purchase costs</h3>
+            <p>Renegotiate COGS, freight and payment terms. A 2-point gross-margin gain compounds on every order.</p>
+            <span class="lever-tag">Gross margin</span>
           </article>
           <article class="lever-card" data-reveal style="--delay:60ms">
+            <span class="lever-num">02</span>
             <span class="lever-icon"><svg class="icon" aria-hidden="true"><use href="#i-cursor"/></svg></span>
-            <h3>Conversion Rate</h3>
-            <p>Improve offers, pages and customer experience.</p>
+            <h3>Conversion rate</h3>
+            <p>Sharpen offers, product pages and checkout. More revenue from the traffic you already pay for.</p>
+            <span class="lever-tag">Revenue quality</span>
           </article>
           <article class="lever-card" data-reveal style="--delay:120ms">
+            <span class="lever-num">03</span>
             <span class="lever-icon"><svg class="icon" aria-hidden="true"><use href="#i-gauge"/></svg></span>
-            <h3>Ad Efficiency</h3>
-            <p>Lower CPA and scale what actually works.</p>
+            <h3>Ad efficiency</h3>
+            <p>Set contribution-margin guardrails, kill vanity ROAS and scale only what pays back.</p>
+            <span class="lever-tag">CAC &amp; payback</span>
           </article>
           <article class="lever-card" data-reveal style="--delay:180ms">
+            <span class="lever-num">04</span>
             <span class="lever-icon"><svg class="icon" aria-hidden="true"><use href="#i-repeat"/></svg></span>
             <h3>Retention &amp; LTV</h3>
-            <p>Turn buyers into repeat customers.</p>
+            <p>Turn first orders into second orders with lifecycle email, bundles and a reason to come back.</p>
+            <span class="lever-tag">Lifetime value</span>
           </article>
           <article class="lever-card" data-reveal style="--delay:240ms">
+            <span class="lever-num">05</span>
             <span class="lever-icon"><svg class="icon" aria-hidden="true"><use href="#i-sliders"/></svg></span>
             <h3>Operations</h3>
-            <p>Streamline fulfilment, refunds and tools.</p>
+            <p>Fix shipping, returns, refunds and tooling. Small leaks across thousands of orders add up fast.</p>
+            <span class="lever-tag">Fulfilment cost</span>
           </article>
           <article class="lever-card" data-reveal style="--delay:300ms">
+            <span class="lever-num">06</span>
             <span class="lever-icon"><svg class="icon" aria-hidden="true"><use href="#i-banknote"/></svg></span>
-            <h3>Cash &amp; Pricing</h3>
-            <p>Price for profit and protect cash flow.</p>
+            <h3>Cash &amp; pricing</h3>
+            <p>Price for profit, protect cash flow and make the business more valuable to a future buyer.</p>
+            <span class="lever-tag">Enterprise value</span>
           </article>
+        </div>
+
+        <div class="section-cta" data-reveal>
+          <a class="btn btn--primary" href="#process">
+            See how the 90-day engagement works
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+          </a>
+          <p class="cta-note"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>No obligation. 100% confidential.</p>
         </div>
       </div>
     </section>
 
-    <!-- Process -->
-    <section class="section process" id="process">
-      <span class="process-glow" aria-hidden="true"></span>
+    <!-- Profit leak scorecard -->
+    <section class="section scorecard-section" id="scorecard">
+      <span class="scorecard-glow" aria-hidden="true"></span>
       <div class="container">
         <header class="section-head" data-reveal>
-          <p class="eyebrow">How it works</p>
-          <h2>Our Profit Growth Diagnostic</h2>
-          <p>A proven process to find profit leaks and build a clear growth plan.</p>
+          <p class="eyebrow">Free profit check</p>
+          <h2>How much profit is leaking out of your store?</h2>
+          <p>Six leaks account for most of the margin we recover. Tick the ones that sound familiar and see a conservative annual estimate in seconds.</p>
         </header>
 
-        <ol class="diagnostic-steps">
-          <li class="step" data-reveal style="--delay:0ms">
-            <div class="step-icon">
-              <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
-              <span class="step-num">01</span>
+        <div class="scorecard" data-scorecard data-reveal>
+          <div class="scorecard-controls">
+            <div class="score-revenue">
+              <label for="score-revenue">Your monthly revenue</label>
+              <div class="score-revenue-row">
+                <span class="score-currency" aria-hidden="true">$</span>
+                <input id="score-revenue" type="number" inputmode="numeric" min="10000" max="10000000" step="5000" value="150000" data-score-revenue aria-describedby="score-revenue-hint" />
+                <span class="score-per">/ month</span>
+              </div>
+              <p id="score-revenue-hint">Use your last full month. Nothing is sent until you apply.</p>
             </div>
-            <div class="step-body">
-              <h3>Deep Dive</h3>
-              <p>We analyze your store, numbers, ads, offers and operations.</p>
-            </div>
-          </li>
-          <li class="step" data-reveal style="--delay:80ms">
-            <div class="step-icon">
-              <svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>
-              <span class="step-num">02</span>
-            </div>
-            <div class="step-body">
-              <h3>Profit Leak Report</h3>
-              <p>You get a clear report showing leaks and opportunities.</p>
-            </div>
-          </li>
-          <li class="step" data-reveal style="--delay:160ms">
-            <div class="step-icon">
-              <svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>
-              <span class="step-num">03</span>
-            </div>
-            <div class="step-body">
-              <h3>Growth Roadmap</h3>
-              <p>A prioritized plan to increase profit fast.</p>
-            </div>
-          </li>
-          <li class="step" data-reveal style="--delay:240ms">
-            <div class="step-icon">
-              <svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>
-              <span class="step-num">04</span>
-            </div>
-            <div class="step-body">
-              <h3>Implement &amp; Optimize</h3>
-              <p>We help you execute and optimize weekly.</p>
-            </div>
-          </li>
-          <li class="step" data-reveal style="--delay:320ms">
-            <div class="step-icon">
-              <svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg>
-              <span class="step-num">05</span>
-            </div>
-            <div class="step-body">
-              <h3>Scale &amp; Compound</h3>
-              <p>More profit, more cash, more freedom.</p>
-            </div>
-          </li>
-        </ol>
 
-        <div class="section-cta" data-reveal>
-          <a class="btn btn--primary" href="#apply">
-            Apply for a Profit Growth Audit
-            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-          </a>
-          <p class="cta-note"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>No obligation. 100% confidential.</p>
+            <fieldset class="score-leaks" data-score-leaks>
+              <legend>Which of these sound familiar?</legend>
+
+              <label class="leak-option">
+                <input type="checkbox" value="ad-spend" data-leak data-points="1.4" />
+                <span class="leak-check" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+                <span class="leak-copy"><strong>Ad spend without margin guardrails</strong><em>You scale on ROAS, not contribution margin.</em></span>
+                <span class="leak-points">1.4 pts</span>
+              </label>
+
+              <label class="leak-option">
+                <input type="checkbox" value="discounts" data-leak data-points="1.0" />
+                <span class="leak-check" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+                <span class="leak-copy"><strong>Discounts and promo dependency</strong><em>Revenue spikes, then margin gives it back.</em></span>
+                <span class="leak-points">1.0 pts</span>
+              </label>
+
+              <label class="leak-option">
+                <input type="checkbox" value="shipping" data-leak data-points="0.9" />
+                <span class="leak-check" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+                <span class="leak-copy"><strong>Shipping, returns and fees</strong><em>Free shipping and refunds quietly eat the order.</em></span>
+                <span class="leak-points">0.9 pts</span>
+              </label>
+
+              <label class="leak-option">
+                <input type="checkbox" value="aov" data-leak data-points="0.8" />
+                <span class="leak-check" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+                <span class="leak-copy"><strong>Weak AOV and bundle mix</strong><em>One item per order, no upsell or subscription.</em></span>
+                <span class="leak-points">0.8 pts</span>
+              </label>
+
+              <label class="leak-option">
+                <input type="checkbox" value="retention" data-leak data-points="1.0" />
+                <span class="leak-check" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+                <span class="leak-copy"><strong>One-and-done customers</strong><em>No repeat-purchase system beyond the occasional email.</em></span>
+                <span class="leak-points">1.0 pts</span>
+              </label>
+
+              <label class="leak-option">
+                <input type="checkbox" value="supplier" data-leak data-points="1.2" />
+                <span class="leak-check" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+                <span class="leak-copy"><strong>Supplier and COGS creep</strong><em>Costs rose but prices and terms never caught up.</em></span>
+                <span class="leak-points">1.2 pts</span>
+              </label>
+            </fieldset>
+          </div>
+
+          <aside class="score-result" aria-labelledby="score-result-title">
+            <div class="score-result-head">
+              <p class="eyebrow">Your estimate</p>
+              <span class="score-selected" data-score-selected>0 of 6 leaks selected</span>
+            </div>
+
+            <div class="score-amount" aria-live="polite" aria-atomic="true">
+              <span class="score-amount-label">Conservative annual opportunity</span>
+              <strong data-score-amount>$0</strong>
+              <span class="score-amount-sub" data-score-sub>Select the leaks you recognise to see your number.</span>
+            </div>
+
+            <div class="score-meter" aria-hidden="true">
+              <span class="score-meter-fill" data-score-meter></span>
+              <span class="score-meter-marker score-meter-marker--low"></span>
+              <span class="score-meter-marker score-meter-marker--high"></span>
+            </div>
+            <div class="score-meter-labels" aria-hidden="true"><span>0 pts</span><span>6.3 pts</span></div>
+
+            <dl class="score-breakdown">
+              <div><dt>Margin points at risk</dt><dd data-score-points>0.0 pts</dd></div>
+              <div><dt>Full opportunity (100%)</dt><dd data-score-full>$0</dd></div>
+              <div><dt>Conservative recovery (50%)</dt><dd data-score-half>$0</dd></div>
+            </dl>
+
+            <p class="score-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>An estimate, not a promise. Your audit replaces this with real unit economics.</p>
+
+            <button class="btn btn--primary btn--block" type="button" data-score-cta data-track="scorecard_cta">
+              Get my leak report
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </button>
+            <p class="score-privacy"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>No email needed to see your score.</p>
+          </aside>
         </div>
       </div>
     </section>
@@ -407,8 +647,8 @@
       <div class="container">
         <header class="section-head section-head--left" data-reveal>
           <p class="eyebrow">Recent store transformation</p>
-          <div class="result-tag"><span class="result-tag-dot"></span>Home &amp; Living Brand</div>
-          <h2>From Break-Even to Highly Profitable</h2>
+          <div class="result-tag"><span class="result-tag-dot"></span>Home &amp; living brand · $180k/mo</div>
+          <h2>From break-even to highly profitable in 90 days</h2>
         </header>
 
         <div class="case-grid">
@@ -416,25 +656,25 @@
             <article class="case-step">
               <span class="case-icon case-icon--problem"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg></span>
               <div>
-                <h3>Problem</h3>
-                <p>High ad spend, low margins, and declining profitability.</p>
+                <h3>The problem</h3>
+                <p>High ad spend, thin margins and discount-led growth. Revenue was growing; profit was going backwards.</p>
               </div>
             </article>
             <article class="case-step">
               <span class="case-icon"><svg class="icon" aria-hidden="true"><use href="#i-sliders"/></svg></span>
               <div>
-                <h3>Solution</h3>
-                <p>Offer &amp; pricing optimization, ad restructuring, and retention strategy.</p>
+                <h3>What we changed</h3>
+                <p>Repriced the core bundle, restructured ad spend around contribution margin, and built a post-purchase retention flow.</p>
               </div>
             </article>
             <article class="case-step">
               <span class="case-icon case-icon--win"><svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg></span>
               <div>
-                <h3>Result <span>(90 Days)</span></h3>
-                <p>Net profit increased 172% and cash flow improved significantly.</p>
+                <h3>The result <span>(90 days)</span></h3>
+                <p>Net profit up 172%, CPA down 31%, AOV up 49%. The store scaled on the same traffic base.</p>
               </div>
             </article>
-            <button class="text-link" type="button" data-open-calculator>
+            <button class="text-link" type="button" data-open-calculator data-track="calculator_open_case">
               Estimate your own profit upside
               <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
             </button>
@@ -444,7 +684,7 @@
             <div class="case-metrics">
               <div class="metric">
                 <div class="metric-value"><span data-counter="172" data-prefix="+" data-suffix="%">+172%</span></div>
-                <div class="metric-label">Net Profit</div>
+                <div class="metric-label">Net profit</div>
               </div>
               <div class="metric">
                 <div class="metric-value"><span data-counter="31" data-prefix="-" data-suffix="%">-31%</span></div>
@@ -452,16 +692,16 @@
               </div>
               <div class="metric">
                 <div class="metric-value"><span data-counter="49" data-prefix="+" data-suffix="%">+49%</span></div>
-                <div class="metric-label">AOV Increase</div>
+                <div class="metric-label">AOV increase</div>
               </div>
             </div>
 
             <div class="chart-wrap">
               <div class="chart-head">
-                <span class="chart-title">Net Profit</span>
+                <span class="chart-title">Net profit</span>
                 <div class="chart-legend">
-                  <span><i class="legend-dot legend-dot--before"></i>Net Profit Before</span>
-                  <span><i class="legend-dot legend-dot--after"></i>Net Profit After</span>
+                  <span><i class="legend-dot legend-dot--before"></i>Before coaching</span>
+                  <span><i class="legend-dot legend-dot--after"></i>After coaching</span>
                 </div>
               </div>
 
@@ -505,103 +745,276 @@
                 <circle class="chart-dot" cx="640" cy="23" r="3.5" fill="#7dffd1"/>
               </svg>
             </div>
-            <p class="chart-note">Results vary by store and niche. Chart is illustrative of a representative engagement.</p>
+            <p class="chart-note">Representative engagement. Results vary by store and niche.</p>
           </div>
+        </div>
+
+        <div class="case-snapshots">
+          <article class="snapshot" data-reveal>
+            <div class="snapshot-head"><span class="snapshot-tag">Apparel · $95k/mo</span><span class="snapshot-delta">+6.1 pts</span></div>
+            <h3>Stopped discounting. Grew profit.</h3>
+            <p>Moved from weekly sitewide sales to a bundle-led offer and a 60-day email flow.</p>
+            <dl><div><dt>Net margin</dt><dd>4.8% → 10.9%</dd></div><div><dt>Repeat rate</dt><dd>+22%</dd></div></dl>
+          </article>
+          <article class="snapshot" data-reveal style="--delay:80ms">
+            <div class="snapshot-head"><span class="snapshot-tag">Supplements · $420k/mo</span><span class="snapshot-delta">+$61k/mo</span></div>
+            <h3>Rebuilt the subscription economics.</h3>
+            <p>Repriced the subscribe-and-save tier and cut a loss-making acquisition channel.</p>
+            <dl><div><dt>Contribution margin</dt><dd>+3.4 pts</dd></div><div><dt>CAC payback</dt><dd>4.1 → 2.2 mo</dd></div></dl>
+          </article>
+          <article class="snapshot" data-reveal style="--delay:160ms">
+            <div class="snapshot-head"><span class="snapshot-tag">Home &amp; living · $180k/mo</span><span class="snapshot-delta">+172%</span></div>
+            <h3>Found $19k/month before touching ads.</h3>
+            <p>Supplier terms, shipping thresholds and bundle mix funded the next growth push.</p>
+            <dl><div><dt>Net profit</dt><dd>+172%</dd></div><div><dt>AOV</dt><dd>+49%</dd></div></dl>
+          </article>
+        </div>
+        <p class="results-footnote" data-reveal>Metrics are illustrative of representative engagements and are not a guarantee of results. We will show you the underlying math on your audit.</p>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">What founders say</p>
+          <h2 id="testimonials-title">Less guessing. More profit.</h2>
+          <p>The work is practical, the numbers are shared, and your team owns the outcome.</p>
+        </header>
+
+        <div class="testimonial-grid">
+          <figure class="testimonial" data-reveal>
+            <div class="testimonial-stars" role="img" aria-label="Rated 5 out of 5">
+              <svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>
+            </div>
+            <blockquote>
+              <p>“We were doing $210k a month and barely paying ourselves. The audit found $19k a month in margin before we changed a single ad. Ninety days later, net profit was up 71%.”</p>
+            </blockquote>
+            <figcaption>
+              <span class="testimonial-avatar">MR</span>
+              <span><strong>Maya R.</strong><small>Founder, home &amp; living · $210k/mo</small></span>
+              <span class="testimonial-metric">+71% profit</span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial" data-reveal style="--delay:90ms">
+            <div class="testimonial-stars" role="img" aria-label="Rated 5 out of 5">
+              <svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>
+            </div>
+            <blockquote>
+              <p>“The difference is accountability. Every Tuesday we knew which lever we were pulling and what it was worth. COGS came down four points and AOV went up 18% in one quarter.”</p>
+            </blockquote>
+            <figcaption>
+              <span class="testimonial-avatar">DK</span>
+              <span><strong>Daniel K.</strong><small>Co-founder, apparel · $140k/mo</small></span>
+              <span class="testimonial-metric">+4 pts COGS</span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial" data-reveal style="--delay:180ms">
+            <div class="testimonial-stars" role="img" aria-label="Rated 5 out of 5">
+              <svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>
+            </div>
+            <blockquote>
+              <p>“I had hired two agencies before this. Neither could tell me what profit looked like per order. Now I have a dashboard I trust and a plan my team can actually execute.”</p>
+            </blockquote>
+            <figcaption>
+              <span class="testimonial-avatar">PS</span>
+              <span><strong>Priya S.</strong><small>CEO, supplements · $420k/mo</small></span>
+              <span class="testimonial-metric">$61k/mo added</span>
+            </figcaption>
+          </figure>
+        </div>
+        <!-- PLACEHOLDER: replace these illustrative client stories with verified testimonials before launch. -->
+        <p class="testimonial-note" data-reveal>Illustrative client stories. Ask for references on your audit — we're happy to connect you. <a href="#apply">Request references</a></p>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section process" id="process">
+      <span class="process-glow" aria-hidden="true"></span>
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">How it works</p>
+          <h2>The 90-day profit engagement</h2>
+          <p>A structured diagnostic, a dollar-quantified plan, and weekly accountability until the numbers move.</p>
+        </header>
+
+        <ol class="diagnostic-steps">
+          <li class="step" data-reveal style="--delay:0ms">
+            <div class="step-icon">
+              <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+              <span class="step-num">01</span>
+            </div>
+            <div class="step-body">
+              <span class="step-week">Week 1</span>
+              <h3>Deep dive</h3>
+              <p>We review your P&amp;L, unit economics, ad accounts, offers, retention and ops. You get a profit baseline — not a scorecard full of vanity metrics.</p>
+              <span class="step-deliverable">Deliverable: profit baseline</span>
+            </div>
+          </li>
+          <li class="step" data-reveal style="--delay:80ms">
+            <div class="step-icon">
+              <svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>
+              <span class="step-num">02</span>
+            </div>
+            <div class="step-body">
+              <span class="step-week">Week 2</span>
+              <h3>Profit leak report</h3>
+              <p>Every leak ranked by dollar impact and effort. You will know exactly where the next $10k of profit is coming from.</p>
+              <span class="step-deliverable">Deliverable: leak report + scorecard</span>
+            </div>
+          </li>
+          <li class="step" data-reveal style="--delay:160ms">
+            <div class="step-icon">
+              <svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>
+              <span class="step-num">03</span>
+            </div>
+            <div class="step-body">
+              <span class="step-week">Week 3</span>
+              <h3>Growth roadmap</h3>
+              <p>A prioritized 90-day plan with owners, deadlines and the KPI each initiative should move. No 80-page deck.</p>
+              <span class="step-deliverable">Deliverable: 90-day roadmap</span>
+            </div>
+          </li>
+          <li class="step" data-reveal style="--delay:240ms">
+            <div class="step-icon">
+              <svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg>
+              <span class="step-num">04</span>
+            </div>
+            <div class="step-body">
+              <span class="step-week">Weeks 4–10</span>
+              <h3>Implement &amp; optimize</h3>
+              <p>Weekly calls, focused experiments and a shared scorecard. We coach your team through the trade-offs instead of adding another vendor.</p>
+              <span class="step-deliverable">Deliverable: weekly profit scorecard</span>
+            </div>
+          </li>
+          <li class="step" data-reveal style="--delay:320ms">
+            <div class="step-icon">
+              <svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg>
+              <span class="step-num">05</span>
+            </div>
+            <div class="step-body">
+              <span class="step-week">Weeks 11–12</span>
+              <h3>Scale &amp; compound</h3>
+              <p>Double down on what worked, systemize the operating rhythm and build a business that is worth more than its revenue.</p>
+              <span class="step-deliverable">Deliverable: profit playbook</span>
+            </div>
+          </li>
+        </ol>
+
+        <div class="section-cta" data-reveal>
+          <a class="btn btn--primary" href="#apply" data-track="cta_process">
+            Apply for a profit growth audit
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+          <p class="cta-note"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>No obligation. 100% confidential.</p>
         </div>
       </div>
     </section>
 
-    <!-- What's included + programs -->
+    <!-- Programs -->
     <section class="section programs" id="programs">
       <div class="container">
         <div class="programs-layout">
           <div class="included-card" data-reveal>
             <p class="eyebrow">Every engagement</p>
-            <h2>What's Included</h2>
+            <h2>What's included</h2>
             <p class="included-intro">A complete operating system for profitable growth — built around your store, not a template.</p>
             <ul class="included-list">
               <li><span class="list-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Profit &amp; margin analysis</li>
-              <li><span class="list-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Custom growth strategy</li>
+              <li><span class="list-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Dollar-quantified roadmap</li>
               <li><span class="list-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Weekly coaching calls</li>
-              <li><span class="list-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Ad account optimization</li>
-              <li><span class="list-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Offer &amp; funnel review</li>
-              <li><span class="list-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Email &amp; retention strategy</li>
-              <li><span class="list-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Supplier &amp; cost review</li>
-              <li><span class="list-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>KPI tracking &amp; reporting</li>
+              <li><span class="list-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Ad account &amp; offer review</li>
+              <li><span class="list-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Retention &amp; LTV strategy</li>
+              <li><span class="list-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Supplier &amp; cost support</li>
+              <li><span class="list-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>KPI dashboard &amp; reporting</li>
+              <li><span class="list-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Team accountability</li>
             </ul>
             <div class="included-note">
               <span><svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg></span>
-              <p><strong>Founder-led.</strong> You work directly with a senior profit strategist — no junior account managers.</p>
+              <p><strong>Founder-led.</strong> You work directly with a senior profit strategist — no junior account managers, no hand-offs.</p>
             </div>
           </div>
 
           <div class="programs-main">
             <header class="programs-head" data-reveal>
               <p class="eyebrow">Ways to work together</p>
-              <h2>Coaching Programs</h2>
-              <p> Choose the level of support that matches where your store is today. We'll recommend the right fit on your audit call.</p>
+              <h2>Coaching programs</h2>
+              <p>Choose the level of support that matches where your store is today. We'll recommend the right fit on your audit call — even if it's the lower tier.</p>
             </header>
 
             <div class="program-grid">
               <article class="program-card" data-reveal style="--delay:0ms">
+                <span class="program-fit">Best for $30k–$100k/mo</span>
                 <div class="program-top">
                   <span class="program-icon"><svg class="icon" aria-hidden="true"><use href="#i-trending-up"/></svg></span>
                 </div>
                 <h3>Growth Accelerator</h3>
-                <p class="program-tagline">Best for stores ready to scale profitably.</p>
+                <p class="program-tagline">Build the profit habit and fix the first leaks.</p>
                 <ul class="program-features">
-                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Full diagnostic</li>
-                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Growth roadmap</li>
-                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Weekly coaching</li>
-                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Implementation support</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Full profit diagnostic</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>90-day growth roadmap</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Weekly 1:1 coaching</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Email implementation support</li>
                 </ul>
                 <div class="program-price">
                   <span>Starting at</span>
                   <div><strong>$2,500</strong><em>/month</em></div>
                   <small>Month-to-month</small>
                 </div>
-                <a class="btn btn--ghost btn--block" href="#apply">Apply Now <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+                <a class="btn btn--ghost btn--block" href="#apply" data-program="Growth Accelerator" data-track="program_growth">
+                  Apply now <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+                </a>
               </article>
 
               <article class="program-card is-featured" data-reveal style="--delay:90ms">
-                <span class="program-badge">Most Popular</span>
+                <span class="program-badge">Most popular</span>
+                <span class="program-fit">Best for $100k–$500k/mo</span>
                 <div class="program-top">
                   <span class="program-icon"><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg></span>
                 </div>
                 <h3>Profit Partner</h3>
-                <p class="program-tagline">Hands-on coaching to maximize profit.</p>
+                <p class="program-tagline">Hands-on coaching to compound profit.</p>
                 <ul class="program-features">
                   <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Everything in Growth</li>
                   <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Ad &amp; funnel optimization</li>
-                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Retention &amp; LTV focus</li>
-                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>KPI tracking &amp; reporting</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Retention &amp; LTV build-out</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>KPI dashboard &amp; reporting</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Direct Slack access</li>
                 </ul>
                 <div class="program-price">
                   <span>Starting at</span>
                   <div><strong>$4,500</strong><em>/month</em></div>
                   <small>90-day engagement</small>
                 </div>
-                <a class="btn btn--primary btn--block" href="#apply">Apply Now <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+                <a class="btn btn--primary btn--block" href="#apply" data-program="Profit Partner" data-track="program_profit">
+                  Apply now <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+                </a>
               </article>
 
               <article class="program-card" data-reveal style="--delay:180ms">
+                <span class="program-fit">Best for $500k+/mo</span>
                 <div class="program-top">
                   <span class="program-icon"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span>
                 </div>
                 <h3>Executive Partner</h3>
-                <p class="program-tagline">Done-with-you for 7-figure brands.</p>
+                <p class="program-tagline">Done-with-you profit leadership for 7-figure brands.</p>
                 <ul class="program-features">
                   <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Everything in Profit Partner</li>
-                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Strategy calls</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Weekly strategy sessions</li>
                   <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Team &amp; ops support</li>
-                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Custom reporting</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Custom board reporting</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Quarterly planning</li>
                 </ul>
                 <div class="program-price">
                   <span>Starting at</span>
                   <div><strong>$7,500</strong><em>/month</em></div>
                   <small>90-day engagement</small>
                 </div>
-                <a class="btn btn--ghost btn--block" href="#apply">Apply Now <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+                <a class="btn btn--ghost btn--block" href="#apply" data-program="Executive Partner" data-track="program_executive">
+                  Apply now <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+                </a>
               </article>
             </div>
 
@@ -614,6 +1027,104 @@
       </div>
     </section>
 
+    <!-- Comparison + fit -->
+    <section class="section compare-section" id="compare">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Why coaching</p>
+          <h2>Different tool. Different incentive.</h2>
+          <p>We're not paid on ad spend or a percentage of revenue. We're paid to make the profit number bigger.</p>
+        </header>
+
+        <div class="compare-wrap" data-reveal role="region" tabindex="0" aria-label="Comparison table, scroll horizontally to see every column">
+          <table class="compare-table">
+            <caption class="sr-only">Comparison of profit coaching, an agency and doing it yourself</caption>
+            <thead>
+              <tr>
+                <th scope="col"><span class="sr-only">Criteria</span></th>
+                <th scope="col" class="compare-us"><span class="compare-badge">Profit Growth Coaching</span></th>
+                <th scope="col">Agency</th>
+                <th scope="col">Doing it yourself</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Primary focus</th><td class="compare-us">Net profit and cash flow</td><td>Ad spend and deliverables</td><td>Whatever is urgent</td></tr>
+              <tr><th scope="row">Who does the work</th><td class="compare-us">Your team, coached weekly</td><td>Agency team</td><td>You, after hours</td></tr>
+              <tr><th scope="row">Accountability</th><td class="compare-us">Weekly scorecard</td><td>Monthly report</td><td>None</td></tr>
+              <tr><th scope="row">Incentive</th><td class="compare-us">Profit, not spend</td><td>Retainer or % of spend</td><td>Your time</td></tr>
+              <tr><th scope="row">First measurable win</th><td class="compare-us">14–30 days</td><td>60–90 days</td><td>Unpredictable</td></tr>
+              <tr><th scope="row">Best for</th><td class="compare-us">Founders who want profit, not more tasks</td><td>Brands that need execution</td><td>Strong operators with spare time</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="fit-grid">
+          <div class="fit-card fit-card--yes" data-reveal>
+            <h3><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg>It's a fit if…</h3>
+            <ul>
+              <li>You're doing <strong>$30k+ per month</strong> and want to protect margin as you grow.</li>
+              <li>You have a team (even a small one) who can implement weekly actions.</li>
+              <li>You'll share real numbers — P&amp;L, ad accounts and unit economics.</li>
+              <li>You want a coach, not another agency taking over your channels.</li>
+            </ul>
+          </div>
+          <div class="fit-card fit-card--no" data-reveal style="--delay:90ms">
+            <h3><svg class="icon" aria-hidden="true"><use href="#i-x-circle"/></svg>It's not a fit if…</h3>
+            <ul>
+              <li>You're pre-revenue or under $20k per month.</li>
+              <li>You want done-for-you ads and no involvement from your team.</li>
+              <li>You're looking for a magic hack or overnight results.</li>
+              <li>You're not willing to change pricing, offers or supplier terms.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-visual" data-reveal>
+            <div class="about-portrait">
+              <img src="/assets/founder.jpg" alt="Founder of Profit Growth Coaching" width="800" height="1200" loading="lazy" decoding="async" />
+            </div>
+            <div class="about-card">
+              <svg class="icon" aria-hidden="true"><use href="#i-quote"/></svg>
+              <p>“Revenue is a scoreboard. Profit is the game.”</p>
+            </div>
+          </div>
+
+          <div class="about-copy" data-reveal style="--delay:100ms">
+            <p class="eyebrow">Founder-led</p>
+            <h2>You'll work with the person who built the playbook.</h2>
+            <p>After a decade operating and advising DTC brands, I kept seeing the same pattern: smart founders with growing revenue and shrinking profit. Agencies were paid to spend more. Nobody was paid to protect the margin.</p>
+            <p>So I built the Profit Operating System — a practical way to find the leaks, quantify them, and help your team fix them without adding another layer of vendors.</p>
+
+            <ul class="about-principles">
+              <li><span>01</span><div><strong>Numbers before opinions.</strong><p>Every recommendation is tied to a dollar impact and a KPI.</p></div></li>
+              <li><span>02</span><div><strong>Profit before scale.</strong><p>We fix the economics first, then help you pour fuel on what works.</p></div></li>
+              <li><span>03</span><div><strong>Your team, not a dependency.</strong><p>You leave with a system your team can run without us.</p></div></li>
+            </ul>
+
+            <div class="about-stats">
+              <div><strong>160+</strong><span>stores coached</span></div>
+              <div><strong>12 yrs</strong><span>operating &amp; advising</span></div>
+              <div><strong>6</strong><span>profit levers</span></div>
+            </div>
+
+            <div class="about-actions">
+              <a class="btn btn--primary" href="#apply" data-track="cta_about">Apply for a profit audit <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+              <button class="btn btn--ghost" type="button" data-book-call data-track="book_call_about">
+                <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+                Book a 15-min fit call
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Application -->
     <section class="section apply" id="apply">
       <div class="container">
@@ -621,26 +1132,40 @@
           <span class="apply-glow" aria-hidden="true"></span>
           <div class="apply-copy">
             <p class="eyebrow eyebrow--inline"><span class="pulse-dot"></span>Free profit audit</p>
-            <h2>Apply for Your Profit Growth Audit</h2>
-            <p>Tell us about your store and we'll show you where the biggest profit opportunities are hiding.</p>
+            <h2>Apply for your profit growth audit</h2>
+            <p>Tell us about your store and we'll show you where the biggest profit opportunities are hiding. If we're not the right fit, we'll say so.</p>
             <ul class="apply-assurances">
               <li><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>No obligation</li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>100% confidential</li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Response in 24–48h</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>NDA &amp; confidential</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Reply in 24–48h</li>
             </ul>
 
             <div class="apply-next">
               <p class="apply-next-title">What happens next</p>
               <ol>
-                <li><span>1</span>We review your store and numbers.</li>
+                <li><span>1</span>We review your store, offer and numbers.</li>
                 <li><span>2</span>We send your top 3 profit opportunities.</li>
                 <li><span>3</span>You decide if we're a fit.</li>
               </ol>
             </div>
+
+            <div class="apply-alt">
+              <p>Prefer to talk first?</p>
+              <button type="button" class="text-link" data-book-call data-track="book_call_apply">
+                <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+                Book a 15-minute fit call
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+              </button>
+            </div>
           </div>
 
           <div class="form-shell">
-            <form class="audit-form" id="audit-form" novalidate>
+            <form class="audit-form" id="audit-form" action="/api/lead" method="post" novalidate data-audit-form>
+              <div class="form-alert" data-form-alert role="alert" tabindex="-1" hidden>
+                <svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>
+                <div><strong data-form-alert-title>We couldn't submit that.</strong><p data-form-alert-message></p><a href="mailto:hello@profitgrowthcoaching.com" data-form-alert-mail>Email us instead</a></div>
+              </div>
+
               <div class="form-progress">
                 <div class="form-progress-top">
                   <span class="form-step-label" data-step-label>Step 1 of 2</span>
@@ -655,13 +1180,13 @@
               <div class="form-step" data-step="1">
                 <div class="form-grid">
                   <div class="field">
-                    <label for="full-name">Full Name</label>
+                    <label for="full-name">Full name</label>
                     <input id="full-name" name="fullName" type="text" placeholder="Jordan Lee" autocomplete="name" required data-error="Please enter your full name." />
                     <span class="field-error" data-error-for="fullName"></span>
                   </div>
                   <div class="field">
-                    <label for="email">Email Address</label>
-                    <input id="email" name="email" type="email" placeholder="jordan@yourstore.com" autocomplete="email" required data-error="Enter a valid email address." />
+                    <label for="email">Work email</label>
+                    <input id="email" name="email" type="email" placeholder="jordan@yourstore.com" autocomplete="email" inputmode="email" required data-error="Enter a valid email address." />
                     <span class="field-error" data-error-for="email"></span>
                   </div>
                   <div class="field field--full">
@@ -670,7 +1195,7 @@
                     <span class="field-error" data-error-for="storeUrl"></span>
                   </div>
                   <div class="field">
-                    <label for="revenue">Monthly Revenue</label>
+                    <label for="revenue">Monthly revenue</label>
                     <div class="select-wrap">
                       <select id="revenue" name="revenue" required data-error="Select a revenue range.">
                         <option value="" selected disabled>Select range</option>
@@ -704,7 +1229,7 @@
                 </div>
                 <div class="form-actions">
                   <button class="btn btn--primary btn--block" type="button" data-next>
-                    Next Step
+                    Next step
                     <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
                   </button>
                 </div>
@@ -714,7 +1239,7 @@
               <div class="form-step" data-step="2" hidden>
                 <div class="form-grid">
                   <div class="field field--full">
-                    <label for="challenge">Primary Challenge</label>
+                    <label for="challenge">Primary challenge</label>
                     <div class="select-wrap">
                       <select id="challenge" name="challenge" required data-error="Select your biggest challenge.">
                         <option value="" selected disabled>Select challenge</option>
@@ -750,18 +1275,42 @@
                     <textarea id="outcomes" name="outcomes" rows="4" placeholder="e.g. Add $30k/month in profit without increasing revenue." required minlength="10" data-error="Tell us a little about your goals (at least 10 characters)."></textarea>
                     <span class="field-error" data-error-for="outcomes"></span>
                   </div>
+
+                  <div class="field field--full consent-field">
+                    <label class="consent-label" for="consent">
+                      <input id="consent" name="consent" type="checkbox" value="yes" required data-error="Please agree to the privacy policy so we can contact you." />
+                      <span class="consent-box" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+                      <span>I agree to the <a href="/legal#privacy" target="_blank" rel="noopener">privacy policy</a> and to being contacted about my audit.</span>
+                    </label>
+                    <span class="field-error" data-error-for="consent"></span>
+                  </div>
                 </div>
+
+                <input type="hidden" name="program" value="" data-program-field />
+                <input type="hidden" name="scorecard" value="" data-scorecard-field />
+                <input type="hidden" name="companyWebsite" value="" data-honeypot tabindex="-1" autocomplete="off" aria-hidden="true" />
+                <input type="hidden" name="elapsedMs" value="" data-elapsed />
+                <input type="hidden" name="page" value="" data-page />
+                <input type="hidden" name="referrer" value="" data-referrer />
+                <input type="hidden" name="utm_source" value="" data-utm-source />
+                <input type="hidden" name="utm_medium" value="" data-utm-medium />
+                <input type="hidden" name="utm_campaign" value="" data-utm-campaign />
+                <input type="hidden" name="utm_term" value="" data-utm-term />
+                <input type="hidden" name="utm_content" value="" data-utm-content />
+                <input type="hidden" name="sessionId" value="" data-session />
+
                 <div class="form-actions form-actions--split">
                   <button class="btn btn--ghost" type="button" data-back>
                     <svg class="icon icon--flip" aria-hidden="true"><use href="#i-arrow-right"/></svg>
                     Back
                   </button>
                   <button class="btn btn--primary" type="submit" data-submit>
-                    Submit Application
+                    <span data-submit-label>Submit application</span>
                     <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+                    <span class="btn-spinner" aria-hidden="true"></span>
                   </button>
                 </div>
-                <p class="form-note"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>No spam. We'll only contact you about your audit.</p>
+                <p class="form-note"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>No spam. We'll only contact you about your audit. Unsubscribe anytime.</p>
               </div>
 
               <div class="form-success" data-success hidden role="status" aria-live="polite">
@@ -773,7 +1322,10 @@
                   <li><span>02</span>You receive your top 3 profit opportunities.</li>
                   <li><span>03</span>If it's a fit, we map out the next 90 days.</li>
                 </ul>
-                <a class="btn btn--ghost" href="#programs">Explore the programs <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+                <button class="btn btn--ghost" type="button" data-book-call data-track="book_call_success">
+                  <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+                  Book your call now
+                </button>
               </div>
             </form>
           </div>
@@ -786,7 +1338,7 @@
       <div class="container">
         <header class="section-head" data-reveal>
           <p class="eyebrow">Questions, answered</p>
-          <h2>Frequently Asked Questions</h2>
+          <h2>Frequently asked questions</h2>
           <p>Still unsure? Apply for an audit — you'll get a straight answer either way.</p>
         </header>
 
@@ -797,7 +1349,7 @@
                 How is this different from an agency?
                 <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span>
               </button></h3>
-              <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1" aria-hidden="true">
+              <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
                 <div class="faq-answer-inner"><p>Agencies are often paid to spend; we're paid to make your business more profitable. We don't take over your ad account. We coach your team, audit the numbers, and build a prioritized profit plan — with weekly accountability.</p></div>
               </div>
             </div>
@@ -806,7 +1358,7 @@
                 Do you work with all niches?
                 <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span>
               </button></h3>
-              <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2" aria-hidden="true">
+              <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
                 <div class="faq-answer-inner"><p>We specialize in ecommerce brands doing $30k–$1M+ per month. We've worked across home, apparel, beauty, pets and supplements. If we don't think we can move your profit, we'll tell you on the audit call.</p></div>
               </div>
             </div>
@@ -815,8 +1367,17 @@
                 How long until we see results?
                 <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span>
               </button></h3>
-              <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3" aria-hidden="true">
+              <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
                 <div class="faq-answer-inner"><p>Most clients see margin and cash-flow improvements within the first 30–60 days. Meaningful compounding usually shows in 90–120 days. Results depend on your starting point and how quickly your team executes.</p></div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a7" id="faq-q7">
+                What does coaching cost?
+                <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span>
+              </button></h3>
+              <div class="faq-answer" id="faq-a7" role="region" aria-labelledby="faq-q7">
+                <div class="faq-answer-inner"><p>Programs start at $2,500 per month. The right fit depends on your revenue, margin, and how much implementation support you need. We recommend a program only after the audit — and we'll tell you if a lower tier is the better fit.</p></div>
               </div>
             </div>
           </div>
@@ -827,7 +1388,7 @@
                 What do you need from us?
                 <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span>
               </button></h3>
-              <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4" aria-hidden="true">
+              <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
                 <div class="faq-answer-inner"><p>Access to your store analytics, ad accounts, P&amp;L and one decision-maker for weekly calls. The more we can see, the faster we can find the leaks. We sign an NDA before anything is shared.</p></div>
               </div>
             </div>
@@ -836,7 +1397,7 @@
                 Do you manage ad spend?
                 <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span>
               </button></h3>
-              <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5" aria-hidden="true">
+              <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
                 <div class="faq-answer-inner"><p>No. We help you make better decisions about ad spend and structure, and we work with your media buyer or in-house team. If you don't have one, we can recommend trusted partners — we don't take a commission on the referral.</p></div>
               </div>
             </div>
@@ -845,14 +1406,32 @@
                 Is there a contract?
                 <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span>
               </button></h3>
-              <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6" aria-hidden="true">
+              <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6">
                 <div class="faq-answer-inner"><p>Growth Accelerator is month-to-month. Profit Partner and Executive Partner are 90-day engagements so there's enough time to implement. There's no long-term lock-in, and you can pause or cancel after the initial term.</p></div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a8" id="faq-q8">
+                What if we're not a fit?
+                <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span>
+              </button></h3>
+              <div class="faq-answer" id="faq-a8" role="region" aria-labelledby="faq-q8">
+                <div class="faq-answer-inner"><p>We'll tell you on the audit call and point you toward the right next step, even if that's not us. We keep the client roster small and only take on brands we believe we can help.</p></div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a9" id="faq-q9">
+                How do you handle our data?
+                <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span>
+              </button></h3>
+              <div class="faq-answer" id="faq-a9" role="region" aria-labelledby="faq-q9">
+                <div class="faq-answer-inner"><p>We sign an NDA before accessing anything, limit access to the people working on your account, and use your data only to deliver the engagement. We don't sell data or share it with advertisers. See our <a href="/legal#privacy">privacy policy</a> for details.</p></div>
               </div>
             </div>
           </div>
         </div>
 
-        <p class="faq-footnote" data-reveal>Still have a question? <a href="mailto:hello@profitgrowthcoaching.com">hello@profitgrowthcoaching.com</a></p>
+        <p class="faq-footnote" data-reveal>Still have a question? <a href="mailto:hello@profitgrowthcoaching.com">hello@profitgrowthcoaching.com</a> · <button type="button" class="link-button" data-book-call data-track="book_call_faq">book a 15-min fit call</button></p>
       </div>
     </section>
 
@@ -863,13 +1442,19 @@
           <span class="cta-orbit" aria-hidden="true"></span>
           <span class="cta-icon"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span>
           <div class="cta-content">
-            <h2 id="cta-title">Stop Losing Profit. Start Building a More Valuable Business.</h2>
-            <p>Spots are limited. Apply now to secure your audit.</p>
+            <h2 id="cta-title">Stop losing profit. Start building a business worth more.</h2>
+            <p>We keep the roster small. Apply now and we'll reply within 24–48 hours.</p>
           </div>
-          <a class="btn btn--primary" href="#apply">
-            Apply for a Profit Growth Audit
-            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-          </a>
+          <div class="cta-actions">
+            <a class="btn btn--primary" href="#apply" data-track="cta_final">
+              Get my free profit audit
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </a>
+            <button class="btn btn--ghost" type="button" data-open-calculator data-track="calculator_open_final">
+              Run the numbers
+              <svg class="icon" aria-hidden="true"><use href="#i-banknote"/></svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -897,21 +1482,27 @@
               <span class="brand-sub">Coaching</span>
             </span>
           </a>
-          <p>Ecommerce profitability coaching that helps you take home more of what you earn.</p>
+          <p>Profit-first coaching for ecommerce founders who want to take home more of what they earn.</p>
+          <ul class="footer-contact">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:hello@profitgrowthcoaching.com">hello@profitgrowthcoaching.com</a></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Replies within 24–48 hours</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Remote · working worldwide</li>
+          </ul>
           <div class="socials">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Profit Growth Coaching on Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Profit Growth Coaching on LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Profit Growth Coaching on Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a>
             <a href="https://www.x.com" target="_blank" rel="noopener noreferrer" aria-label="Profit Growth Coaching on X"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Profit Growth Coaching on LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Profit Growth Coaching on Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a>
           </div>
         </div>
 
         <nav class="footer-col" aria-label="Company">
           <h3>Company</h3>
           <ul>
-            <li><a href="#how-it-works">Our Approach</a></li>
+            <li><a href="#problem">Why profit leaks</a></li>
+            <li><a href="#how-it-works">The system</a></li>
             <li><a href="#results">Results</a></li>
-            <li><a href="#programs">Programs</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="mailto:hello@profitgrowthcoaching.com">Contact</a></li>
           </ul>
@@ -923,33 +1514,35 @@
             <li><a href="#programs">Growth Accelerator</a></li>
             <li><a href="#programs">Profit Partner</a></li>
             <li><a href="#programs">Executive Partner</a></li>
-            <li><a href="#apply">Compare Plans</a></li>
+            <li><a href="#compare">Compare options</a></li>
+            <li><a href="#apply">Free profit audit</a></li>
           </ul>
         </nav>
 
         <nav class="footer-col" aria-label="Resources">
           <h3>Resources</h3>
           <ul>
-            <li><button type="button" data-open-calculator>Profit Calculator</button></li>
-            <li><a href="#results">Case Studies</a></li>
-            <li><a href="#apply">Free Profit Audit</a></li>
-            <li><a href="legal.html#privacy">Privacy</a></li>
+            <li><a href="#scorecard">Profit leaks scorecard</a></li>
+            <li><button type="button" data-open-calculator data-track="calculator_open_footer">Profit calculator</button></li>
+            <li><a href="#results">Case studies</a></li>
+            <li><a href="/legal#privacy">Privacy policy</a></li>
+            <li><a href="/legal#terms">Terms of service</a></li>
           </ul>
         </nav>
 
         <div class="footer-news">
-          <h3>Get Profit Tips Weekly</h3>
-          <p>Actionable strategies to grow profit in your store.</p>
+          <h3>Get profit tips weekly</h3>
+          <p>One practical margin idea in your inbox. No fluff, no daily emails.</p>
           <form class="newsletter" data-newsletter novalidate>
             <label class="sr-only" for="newsletter-email">Email address</label>
             <div class="newsletter-row">
-              <input id="newsletter-email" name="newsletterEmail" type="email" placeholder="Enter your email" autocomplete="email" required />
+              <input id="newsletter-email" name="email" type="email" placeholder="Enter your email" autocomplete="email" required aria-describedby="newsletter-note" />
               <button type="submit" aria-label="Subscribe to profit tips">
                 <svg class="icon" aria-hidden="true"><use href="#i-send"/></svg>
               </button>
             </div>
-            <p class="newsletter-status" data-newsletter-status aria-live="polite"></p>
-            <small>No spam. Unsubscribe anytime.</small>
+            <p class="newsletter-status" data-newsletter-status role="status" aria-live="polite"></p>
+            <small id="newsletter-note">No spam. Unsubscribe anytime. See our <a href="/legal#privacy">privacy policy</a>.</small>
           </form>
         </div>
       </div>
@@ -957,22 +1550,33 @@
       <div class="footer-bottom">
         <p>© <span data-year>2026</span> Profit Growth Coaching. All rights reserved.</p>
         <div class="footer-legal">
-          <a href="legal.html#privacy">Privacy Policy</a>
-          <a href="legal.html#terms">Terms of Service</a>
+          <a href="/legal#privacy">Privacy</a>
+          <a href="/legal#terms">Terms</a>
+          <a href="/legal#accessibility">Accessibility</a>
+          <a href="#home">Back to top</a>
         </div>
       </div>
     </div>
   </footer>
 
+  <!-- Sticky mobile CTA -->
+  <div class="sticky-cta" data-sticky-cta aria-hidden="true">
+    <div class="sticky-cta-copy">
+      <strong>Free profit audit</strong>
+      <span>Reply in 24–48h · No obligation</span>
+    </div>
+    <a class="btn btn--primary btn--sm" href="#apply" data-track="cta_sticky">Apply now <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+  </div>
+
   <!-- Profit calculator -->
-  <dialog class="calc-dialog" id="profit-calculator" aria-labelledby="calc-title">
+  <dialog class="calc-dialog" id="profit-calculator" aria-labelledby="calc-title" aria-describedby="calc-intro">
     <div class="calc-panel">
       <button class="calc-close" type="button" aria-label="Close calculator" data-close-calculator>
         <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
       </button>
       <p class="eyebrow">Profit calculator</p>
       <h2 id="calc-title">Estimate your profit upside</h2>
-      <p class="calc-intro">See what a few margin points are worth in your store. Adjust the sliders to match your numbers.</p>
+      <p class="calc-intro" id="calc-intro">See what a few margin points are worth in your store. Adjust the sliders to match your numbers.</p>
 
       <div class="calc-fields">
         <div class="calc-field">
@@ -1001,7 +1605,7 @@
         </div>
       </div>
 
-      <div class="calc-results">
+      <div class="calc-results" aria-live="polite" aria-atomic="true">
         <div class="calc-result">
           <span>New monthly profit</span>
           <strong data-calc-new-profit>$19,500</strong>
@@ -1016,13 +1620,26 @@
         </div>
       </div>
       <p class="calc-note">Illustrative estimate only. Actual results depend on your costs, execution and market.</p>
-      <a class="btn btn--primary btn--block" href="#apply" data-calc-cta>
+
+      <form class="calc-capture" data-calc-email novalidate>
+        <label for="calc-email">Want this breakdown by email?</label>
+        <div class="calc-capture-row">
+          <input id="calc-email" name="email" type="email" placeholder="you@yourstore.com" autocomplete="email" required />
+          <button type="submit" class="btn btn--ghost btn--sm">Email it</button>
+        </div>
+        <p class="calc-capture-status" data-calc-email-status role="status" aria-live="polite"></p>
+      </form>
+
+      <a class="btn btn--primary btn--block" href="#apply" data-calc-cta data-track="calculator_apply">
         Get a custom profit plan
         <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
       </a>
     </div>
   </dialog>
 
-  <script src="script.js" defer></script>
+  <div class="toast" data-toast role="status" aria-live="polite" hidden></div>
+
+  <script src="/config.js"></script>
+  <script src="/script.js" defer></script>
 </body>
 </html>
