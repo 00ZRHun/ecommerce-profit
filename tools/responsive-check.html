@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Responsive check harness</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #111820; }
+  body { display: block; }
+  #clip {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    background: #040a13;
+  }
+  #frame { position: absolute; left: 0; border: 0; display: block; }
+</style>
+</head>
+<body>
+  <div id="clip"><iframe id="frame" title="Preview"></iframe></div>
+  <script src="responsive-check.js"></script>
+</body>
+</html>
