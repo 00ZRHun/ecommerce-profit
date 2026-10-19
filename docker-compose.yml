@@ -1,0 +1,45 @@
+# ---------------------------------------------------------------------------
+# Profit Growth Coaching — single-service deployment
+#
+#   1. cp .env.example .env   and set ADMIN_TOKEN + SITE_URL
+#   2. docker compose up -d --build
+#
+# The funnel is served on http://localhost:4173. Put a TLS-terminating reverse
+# proxy (Caddy, nginx, Traefik) in front of it and set BEHIND_PROXY=1.
+# ---------------------------------------------------------------------------
+services:
+  funnel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pgc-funnel:latest
+    container_name: pgc-funnel
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:4173:4173"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      HOST: 0.0.0.0
+      PORT: "4173"
+      DATA_DIR: /app/data
+      BEHIND_PROXY: "1"
+    volumes:
+      # Leads, subscribers and analytics survive redeploys.
+      - pgc-data:/app/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+volumes:
+  pgc-data:

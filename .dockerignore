@@ -1,0 +1,33 @@
+# Build context exclusions — keeps secrets, data and dev files out of the image.
+.git
+.github
+.gitignore
+.env
+.env.*
+!.env.example
+
+# Runtime data must never be baked into an image.
+data
+
+# Tests and tooling
+tests
+tools
+__pycache__
+*.py[cod]
+.pytest_cache
+.venv
+venv
+
+# Docs and infra
+README.md
+DEPLOYMENT.md
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+*.log
