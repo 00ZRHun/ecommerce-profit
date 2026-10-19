@@ -5,7 +5,7 @@ A responsive, single-page marketing site built from the supplied reference image
 ## Run it
 
 ```bash
-cd /Users/zuronghun/Desktop/Coding/testimonial
+cd {{YOUR_REPO_PATH}}
 python3 -m http.server 4173
 ```
 
