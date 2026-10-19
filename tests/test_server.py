@@ -2,9 +2,13 @@
 
 from __future__ import annotations
 
+import base64
 import gzip
+import hashlib
 import http.client
 import json
+import os
+import re
 import tempfile
 import threading
 import unittest
@@ -164,6 +168,37 @@ class ValidationTests(unittest.TestCase):
         self.assertEqual(clean["source"], "newsletter")
 
 
+class ConfigTests(unittest.TestCase):
+    ENV_KEYS = ("TRUST_PROXY", "BEHIND_PROXY", "LEAD_RATE_LIMIT", "SITE_URL")
+
+    def setUp(self):
+        self.saved = {key: os.environ.get(key) for key in self.ENV_KEYS}
+        for key in self.ENV_KEYS:
+            os.environ.pop(key, None)
+
+    def tearDown(self):
+        for key, value in self.saved.items():
+            if value is None:
+                os.environ.pop(key, None)
+            else:
+                os.environ[key] = value
+
+    def test_proxy_trust_accepts_either_variable_name(self):
+        # Regression: docs and docker-compose use BEHIND_PROXY, so it must work.
+        self.assertFalse(server.Config.from_env(ROOT).trust_proxy)
+        for key in ("TRUST_PROXY", "BEHIND_PROXY"):
+            os.environ[key] = "1"
+            self.assertTrue(server.Config.from_env(ROOT).trust_proxy, key)
+            os.environ.pop(key, None)
+
+    def test_rate_limit_and_site_url_from_env(self):
+        os.environ["LEAD_RATE_LIMIT"] = "42"
+        os.environ["SITE_URL"] = "https://example.com/"
+        config = server.Config.from_env(ROOT)
+        self.assertEqual(config.lead_rate_limit, 42)
+        self.assertEqual(config.site_url, "https://example.com")
+
+
 class StaticTests(ServerTestCase):
     def test_index_served_with_security_headers(self):
         status, headers, body = self.request("GET", "/")
@@ -192,6 +227,14 @@ class StaticTests(ServerTestCase):
             status, _, _ = self.request("GET", path)
             self.assertEqual(status, 404, path)
 
+    def test_unhashed_assets_revalidate_and_fonts_are_immutable(self):
+        # Non fingerprinted assets must never be served stale after a deploy.
+        for path in ("/styles.css", "/script.js", "/config.js", "/assets/og-image.png"):
+            _, headers, _ = self.request("GET", path)
+            self.assertIn("no-cache", headers["Cache-Control"], path)
+        _, headers, _ = self.request("GET", "/assets/fonts/inter-latin.woff2")
+        self.assertIn("immutable", headers["Cache-Control"])
+
     def test_etag_returns_304(self):
         _, headers, _ = self.request("GET", "/styles.css")
         etag = headers["ETag"]
@@ -210,12 +253,78 @@ class StaticTests(ServerTestCase):
             status, _, _ = self.request("GET", path)
             self.assertEqual(status, 200, path)
 
+    def test_landing_assets_are_served(self):
+        for path in (
+            "/assets/favicon.svg",
+            "/assets/apple-touch-icon.png",
+            "/assets/og-image.png",
+            "/assets/fonts/inter-latin.woff2",
+            "/assets/fonts/manrope-latin.woff2",
+        ):
+            status, _, body = self.request("GET", path)
+            self.assertEqual(status, 200, path)
+            self.assertGreater(len(body), 0, path)
+
+    def test_thank_you_page(self):
+        status, _, body = self.request("GET", "/thank-you")
+        self.assertEqual(status, 200)
+        self.assertIn(b"Application received", body)
+        self.assertIn(b"noindex", body)
+
+    def test_not_found_page_has_real_content_and_status(self):
+        status, headers, body = self.request("GET", "/nope")
+        self.assertEqual(status, 404)
+        self.assertIn(b"We could not find that page", body)
+        self.assertIn("text/html", headers["Content-Type"])
+        self.assertEqual(headers["Cache-Control"], "no-store")
+
+    def test_deployment_files_are_not_served(self):
+        for path in (
+            "/DEPLOYMENT.md",
+            "/Dockerfile",
+            "/docker-compose.yml",
+            "/.dockerignore",
+            "/.gitignore",
+            "/.env.example",
+            "/tools/og-card.html",
+            "/tools",
+        ):
+            status, _, _ = self.request("GET", path)
+            self.assertEqual(status, 404, path)
+
+    def test_csp_hashes_cover_every_page(self):
+        """Inline scripts on secondary pages must be allowed by the CSP."""
+        csp = server.build_csp(ROOT)
+        hashed = set(re.findall(r"'sha256-[A-Za-z0-9+/=]+'", csp))
+        self.assertTrue(hashed)
+        for page in ("404.html", "thank-you.html", "legal.html", "index.html"):
+            html = (ROOT / page).read_text(encoding="utf-8")
+            for match in re.finditer(
+                r"<script(?![^>]*\bsrc=)([^>]*)>(.*?)</script>", html, re.S | re.I
+            ):
+                attrs, script = match.groups()
+                if not script.strip() or "application/ld+json" in attrs:
+                    continue
+                digest = base64.b64encode(hashlib.sha256(script.encode("utf-8")).digest()).decode()
+                self.assertIn(f"'sha256-{digest}'", hashed, f"{page} inline script missing from CSP")
+
+    def test_ld_json_is_not_hashed(self):
+        csp = server.build_csp(ROOT)
+        html = (ROOT / "index.html").read_text(encoding="utf-8")
+        data_block = re.search(
+            r'<script type="application/ld\+json">(.*?)</script>', html, re.S
+        ).group(1)
+        digest = base64.b64encode(hashlib.sha256(data_block.encode("utf-8")).digest()).decode()
+        self.assertNotIn(f"'sha256-{digest}'", csp)
+
     def test_health(self):
         status, _, body = self.request("GET", "/api/health")
         self.assertEqual(status, 200)
         payload = json.loads(body)
         self.assertTrue(payload["ok"])
         self.assertEqual(payload["version"], server.VERSION)
+        # Lead volume is business intelligence and must not be public.
+        self.assertNotIn("leadsStored", payload)
 
 
 class LeadApiTests(ServerTestCase):
@@ -316,6 +425,13 @@ class AdminApiTests(ServerTestCase):
         self.config.admin_token = ""
         status, _, _ = self.request("GET", "/api/leads")
         self.assertEqual(status, 503)
+
+    def test_health_reports_lead_count_to_admin_only(self):
+        self.post_json("/api/lead", valid_lead())
+        headers = {"Authorization": "Bearer test-token"}
+        status, _, body = self.request("GET", "/api/health", headers=headers)
+        self.assertEqual(status, 200)
+        self.assertEqual(json.loads(body)["leadsStored"], 1)
 
     def test_stats_aggregate_events(self):
         headers = {"Authorization": "Bearer test-token", "Content-Type": "application/json"}

@@ -144,7 +144,6 @@ class Config:
     webhook_secret: str = ""
     webhook_timeout: int = 6
     min_form_seconds: float = 2.5
-    behind_proxy: bool = False
     stdout_logs: bool = True
     version: str = VERSION
     started_at: float = field(default_factory=time.time)
@@ -176,7 +175,9 @@ class Config:
             admin_token=os.environ.get("ADMIN_TOKEN", ""),
             site_url=os.environ.get("SITE_URL", "https://profitgrowthcoaching.com").rstrip("/"),
             allowed_origins=origins,
-            trust_proxy=_env_bool("TRUST_PROXY"),
+            # BEHIND_PROXY is the friendlier alias documented in DEPLOYMENT.md;
+            # either variable enables X-Forwarded-For trust.
+            trust_proxy=_env_bool("TRUST_PROXY") or _env_bool("BEHIND_PROXY"),
             enable_hsts=_env_bool("ENABLE_HSTS"),
             max_body_bytes=_env_int("MAX_BODY_BYTES", 32 * 1024),
             lead_rate_limit=_env_int("LEAD_RATE_LIMIT", 5),
@@ -189,7 +190,6 @@ class Config:
             webhook_secret=os.environ.get("LEAD_WEBHOOK_SECRET", ""),
             webhook_timeout=_env_int("WEBHOOK_TIMEOUT", 6),
             min_form_seconds=float(os.environ.get("MIN_FORM_SECONDS", "2.5")),
-            behind_proxy=_env_bool("BEHIND_PROXY"),
             stdout_logs=not _env_bool("QUIET_LOGS"),
         )
 
@@ -776,17 +776,17 @@ class FunnelHandler(BaseHTTPRequestHandler):
     # -- API --------------------------------------------------------------
     def _handle_api_get(self, path: str, query: dict[str, list[str]]) -> None:
         if path == "/api/health":
-            leads = JsonlStore(self.config.leads_path)
-            self._send_json(
-                HTTPStatus.OK,
-                {
-                    "ok": True,
-                    "version": self.config.version,
-                    "uptimeSeconds": int(time.time() - self.config.started_at),
-                    "storage": "ok" if self.config.data_dir.exists() else "missing",
-                    "leadsStored": len(leads.read_all()),
-                },
-            )
+            payload = {
+                "ok": True,
+                "version": self.config.version,
+                "uptimeSeconds": int(time.time() - self.config.started_at),
+                "storage": "ok" if self.config.data_dir.exists() else "missing",
+            }
+            # The stored-lead count is business intelligence, so it is only
+            # reported to an authorised caller. Uptime checks stay public.
+            if self._authorized():
+                payload["leadsStored"] = len(JsonlStore(self.config.leads_path).read_all())
+            self._send_json(HTTPStatus.OK, payload)
             return
         if path in {"/api/leads", "/api/stats"}:
             if not self.config.admin_token:
@@ -1187,12 +1187,15 @@ class FunnelHandler(BaseHTTPRequestHandler):
         self.send_header("ETag", etag)
         self.send_header("Last-Modified", formatdate(stat.st_mtime, usegmt=True))
         self.send_header("Vary", "Accept-Encoding")
-        if candidate.suffix.lower() in {".html", ".webmanifest", ".xml", ".txt"}:
-            self.send_header("Cache-Control", "no-cache")
-        elif "/assets/" in candidate.as_posix() or candidate.suffix.lower() in {".woff2", ".svg"}:
+        if candidate.suffix.lower() == ".woff2":
+            # Fonts are effectively immutable and the heaviest asset; cache hard.
             self.send_header("Cache-Control", "public, max-age=31536000, immutable")
         else:
-            self.send_header("Cache-Control", "public, max-age=3600, must-revalidate")
+            # HTML, JS, CSS and images are not content-hashed, so revalidate with
+            # the ETag on every load. This keeps deploys consistent (a returning
+            # visitor can never pair new HTML with stale CSS/JS) at the cost of a
+            # cheap 304 round-trip.
+            self.send_header("Cache-Control", "no-cache")
         if can_gzip:
             self.send_header("Content-Encoding", "gzip")
         self.end_headers()
@@ -1269,10 +1272,24 @@ def build_csp(root: Path) -> str:
         if not page.is_file():
             continue
         html = page.read_text(encoding="utf-8", errors="replace")
-        for match in re.finditer(r"<script(?![^>]*\bsrc=)[^>]*>(.*?)</script>", html, re.S | re.I):
-            body = match.group(1)
+        for match in re.finditer(r"<script(?![^>]*\bsrc=)([^>]*)>(.*?)</script>", html, re.S | re.I):
+            attrs, body = match.group(1), match.group(2)
             if not body.strip():
                 continue
+            # Only scripts that actually execute need a hash. Skip data blocks
+            # such as <script type="application/ld+json">.
+            type_match = re.search(r"""\btype\s*=\s*["']?([^"'\s>]+)""", attrs, re.I)
+            if type_match:
+                script_type = type_match.group(1).strip().lower()
+                javascript_types = {
+                    "text/javascript",
+                    "application/javascript",
+                    "text/ecmascript",
+                    "application/ecmascript",
+                    "module",
+                }
+                if script_type not in javascript_types:
+                    continue
             digest = base64.b64encode(hashlib.sha256(body.encode("utf-8")).digest()).decode()
             entry = f"'sha256-{digest}'"
             if entry not in seen:
