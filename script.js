@@ -139,7 +139,7 @@
       window.plausible(event, { props });
     }
     const url = CONFIG.eventEndpoint;
-    if (!url) return;
+    if (!url || window.location.protocol === "file:") return;
     try {
       const body = JSON.stringify(payload);
       if (navigator.sendBeacon) {
@@ -1372,9 +1372,11 @@
         showSuccess(payload);
       } catch (error) {
         const message =
-          error && error.name === "AbortError"
-            ? "The request timed out. Your answers are saved — please try again or email us."
-            : "We couldn't reach the server. Your answers are saved — check your connection and try again, or email us directly.";
+          window.location.protocol === "file:"
+            ? "This page is open as a local file, so there is no server to receive your application. Run python3 server.py and open http://127.0.0.1:4173 — or email us directly and we'll reply within 24–48 hours."
+            : error && error.name === "AbortError"
+              ? "The request timed out. Your answers are saved — please try again or email us."
+              : "We couldn't reach the server. Your answers are saved — check your connection and try again, or email us directly.";
         showAlert("We couldn't submit that.", message, emailFallbackBody(payload));
         track("form_error", { reason: error && error.name ? error.name : "network" });
       } finally {

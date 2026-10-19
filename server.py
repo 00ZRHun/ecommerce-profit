@@ -64,6 +64,13 @@ PROTECTED_NAMES = {
     "DEPLOYMENT.md",
 }
 PROTECTED_DIRS = {"data", "tests", "tools", ".git", ".github", "__pycache__", "node_modules"}
+# Pages link to their files (so the site also works when opened from disk);
+# the server redirects those file URLs to the canonical clean URLs.
+CANONICAL_REDIRECTS = {
+    "/index.html": "/",
+    "/legal.html": "/legal",
+    "/thank-you.html": "/thank-you",
+}
 STATIC_ALLOWED_EXTENSIONS = {
     ".html",
     ".css",
@@ -669,6 +676,14 @@ class FunnelHandler(BaseHTTPRequestHandler):
         if self.command != "HEAD":
             self.wfile.write(body)
 
+    def _redirect(self, location: str, status: int = HTTPStatus.MOVED_PERMANENTLY) -> None:
+        self.send_response(status)
+        self._common_headers()
+        self.send_header("Location", location)
+        self.send_header("Content-Length", "0")
+        self.send_header("Cache-Control", "no-cache")
+        self.end_headers()
+
     def _read_body(self) -> bytes:
         try:
             length = int(self.headers.get("Content-Length", "0"))
@@ -747,6 +762,11 @@ class FunnelHandler(BaseHTTPRequestHandler):
         path = parsed.path
         if path.startswith("/api/"):
             self._handle_api_get(path, parse_qs(parsed.query))
+            return
+        canonical = CANONICAL_REDIRECTS.get(path)
+        if canonical is not None:
+            suffix = f"?{parsed.query}" if parsed.query else ""
+            self._redirect(f"{canonical}{suffix}")
             return
         self._serve_static(path)
 
@@ -993,7 +1013,7 @@ class FunnelHandler(BaseHTTPRequestHandler):
 
         if self._wants_html():
             self.send_response(HTTPStatus.SEE_OTHER)
-            self.send_header("Location", "/thank-you.html")
+            self.send_header("Location", "/thank-you")
             self.send_header("Content-Length", "0")
             self._common_headers()
             self.end_headers()

@@ -219,6 +219,47 @@ class StaticTests(ServerTestCase):
         self.assertEqual(status, 404)
         self.assertIn(b"not found", body.lower())
 
+    def test_file_urls_redirect_to_clean_urls(self):
+        """Relative links use .html files so the site also works from disk."""
+        for source, target in (
+            ("/index.html", "/"),
+            ("/legal.html", "/legal"),
+            ("/thank-you.html", "/thank-you"),
+        ):
+            status, headers, _ = self.request("GET", source)
+            self.assertEqual(status, 301, source)
+            self.assertEqual(headers["Location"], target, source)
+        status, headers, _ = self.request("GET", "/index.html?utm_source=email")
+        self.assertEqual(status, 301)
+        self.assertEqual(headers["Location"], "/?utm_source=email")
+
+    def test_pages_work_when_opened_directly_from_disk(self):
+        """A page opened as a file:// must still load its assets and links.
+
+        Root-relative URLs such as /styles.css resolve against the filesystem
+        root when a page is opened from disk, so local references have to be
+        relative and must point at a file that really exists next to the page.
+        """
+        reference = re.compile(r'(?:href|src)="([^"]+)"')
+        for page in ("index.html", "legal.html", "thank-you.html", "404.html"):
+            html = (ROOT / page).read_text(encoding="utf-8")
+            for url in reference.findall(html):
+                if url.startswith(("#", "https://", "http://", "mailto:", "tel:", "data:")):
+                    continue
+                self.assertFalse(url.startswith("/"), f"{page} uses root-relative URL {url}")
+                target = (ROOT / url.split("#")[0].split("?")[0]).resolve()
+                self.assertTrue(target.is_file(), f"{page} references missing file {url}")
+
+    def test_stylesheet_assets_are_relative(self):
+        css = (ROOT / "styles.css").read_text(encoding="utf-8")
+        urls = re.findall(r'url\(\s*["\']?([^"\')]+)', css)
+        self.assertTrue(urls)
+        for url in urls:
+            if url.startswith(("data:", "http://", "https://", "#")):
+                continue
+            self.assertFalse(url.startswith("/"), f"styles.css uses root-relative URL {url}")
+            self.assertTrue((ROOT / url).resolve().is_file(), f"styles.css references missing {url}")
+
     def test_protected_paths_and_traversal_blocked(self):
         for path in ("/server.py", "/.env", "/data/leads.jsonl", "/README.md", "/tests/test_server.py"):
             status, _, _ = self.request("GET", path)
@@ -373,7 +414,7 @@ class LeadApiTests(ServerTestCase):
             },
         )
         self.assertEqual(status, 303)
-        self.assertEqual(headers["Location"], "/thank-you.html")
+        self.assertEqual(headers["Location"], "/thank-you")
 
     def test_rate_limit(self):
         self.config.lead_rate_limit = 2

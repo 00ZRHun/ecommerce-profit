@@ -68,7 +68,7 @@ No Node, no npm, no framework, no third-party trackers, no build step.
 - Optional HMAC-signed webhook so leads can be pushed to Slack or an automation
   platform.
 - Native form POST support: non-JS submissions get a `303` redirect to
-  `/thank-you.html`.
+  `/thank-you`.
 
 ---
 
@@ -92,6 +92,11 @@ open http://127.0.0.1:4173
 
 You should see the landing page. Without `ADMIN_TOKEN` the server logs a warning
 and disables the admin endpoints — everything public still works.
+
+All page references are relative, so double-clicking `index.html` also renders
+the full design and behaviour from disk (`file://`). Form submissions and
+analytics need the API, so use the server above for end-to-end testing; the
+form shows a "start the server" hint when it detects a `file://` preview.
 
 Run the test suite:
 
@@ -227,7 +232,7 @@ Accepts `application/json` or `application/x-www-form-urlencoded`.
 | `companyWebsite` | — | Honeypot. Must stay empty. |
 | `elapsedMs` | — | Fill time; too-fast submissions are rejected as spam. |
 
-`201` on success (JSON) or `303 → /thank-you.html` for native form posts.
+`201` on success (JSON) or `303 → /thank-you` for native form posts.
 
 ### `POST /api/subscribe`
 
