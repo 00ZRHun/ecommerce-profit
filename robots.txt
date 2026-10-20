@@ -1,4 +1,4 @@
-# Profit Growth Coaching
+# Profit Guild
 User-agent: *
 Allow: /
 Disallow: /api/

@@ -203,7 +203,7 @@ class StaticTests(ServerTestCase):
     def test_index_served_with_security_headers(self):
         status, headers, body = self.request("GET", "/")
         self.assertEqual(status, 200)
-        self.assertIn(b"Profit Growth Coaching", body)
+        self.assertIn(b"Profit Guild", body)
         self.assertEqual(headers["X-Content-Type-Options"], "nosniff")
         self.assertEqual(headers["X-Frame-Options"], "DENY")
         self.assertIn("default-src 'self'", headers["Content-Security-Policy"])

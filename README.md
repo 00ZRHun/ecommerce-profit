@@ -1,4 +1,4 @@
-# Profit Growth Coaching — ecommerce profit funnel
+# Profit Guild — ecommerce profit funnel
 
 A production-ready marketing funnel and lead-capture backend for an ecommerce
 profit-coaching business. Static HTML/CSS/JS on the front, a **zero-dependency

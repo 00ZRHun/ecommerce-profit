@@ -52,7 +52,16 @@
         doc.documentElement.scrollHeight,
         doc.body ? doc.body.scrollHeight : 0
       );
-      document.title = 'w=' + width + ' y=' + offsetY + ' full=' + full;
+      var scrollWidth = Math.max(
+        doc.documentElement.scrollWidth,
+        doc.body ? doc.body.scrollWidth : 0
+      );
+      var programsTop = 0;
+      var programs = doc.getElementById('programs');
+      if (programs) programsTop = Math.round(programs.getBoundingClientRect().top);
+      document.title =
+        'w=' + width + ' sw=' + scrollWidth + ' y=' + offsetY + ' full=' + full +
+        ' pt=' + programsTop;
     } catch (error) { /* ignore */ }
   }
 

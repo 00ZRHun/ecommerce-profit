@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-# Profit Growth Coaching — single-service deployment
+# Profit Guild — single-service deployment
 #
 #   1. cp .env.example .env   and set ADMIN_TOKEN + SITE_URL
 #   2. docker compose up -d --build

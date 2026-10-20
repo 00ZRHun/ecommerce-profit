@@ -1,6 +1,6 @@
 # Deployment guide
 
-Everything you need to put the Profit Growth Coaching funnel on the public
+Everything you need to put the Profit Guild funnel on the public
 internet and keep it running. Written for the bundled zero-dependency Python
 server; the only requirement is **Python 3.9+** (or Docker).
 
@@ -124,7 +124,7 @@ or including `.env` if you keep your config there; just `chmod 600` it).
 
 ```ini
 [Unit]
-Description=Profit Growth Coaching funnel
+Description=Profit Guild funnel
 After=network-online.target
 Wants=network-online.target
 

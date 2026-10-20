@@ -18,6 +18,20 @@
     font-display: block;
     src: url("/assets/fonts/inter-latin.woff2") format("woff2");
   }
+  @font-face {
+    font-family: "Fraunces";
+    font-style: normal;
+    font-weight: 300 700;
+    font-display: block;
+    src: url("/assets/fonts/fraunces-latin.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Fraunces";
+    font-style: italic;
+    font-weight: 300 700;
+    font-display: block;
+    src: url("/assets/fonts/fraunces-italic-latin.woff2") format("woff2");
+  }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -25,8 +39,8 @@
 
   body {
     font-family: "Inter", -apple-system, "Helvetica Neue", Arial, sans-serif;
-    background: #040a13;
-    color: #eaf5f0;
+    background: #0f0b08;
+    color: #f5f0ec;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -34,14 +48,14 @@
     position: relative;
     width: 1200px;
     height: 630px;
-    padding: 64px 72px;
+    padding: 60px 72px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background:
-      radial-gradient(900px 520px at 88% -10%, rgba(20, 189, 131, 0.28), transparent 62%),
-      radial-gradient(700px 480px at -8% 108%, rgba(20, 189, 131, 0.16), transparent 60%),
-      linear-gradient(160deg, #07131e 0%, #040a13 58%, #03080f 100%);
+      radial-gradient(900px 520px at 88% -10%, rgba(169, 89, 40, 0.3), transparent 62%),
+      radial-gradient(700px 480px at -8% 108%, rgba(169, 89, 40, 0.17), transparent 60%),
+      linear-gradient(160deg, #19120e 0%, #0f0b08 58%, #0f0b08 100%);
     overflow: hidden;
   }
 
@@ -62,7 +76,7 @@
     top: 0;
     width: 100%;
     height: 8px;
-    background: linear-gradient(90deg, #14bd83 0%, #8bffd6 62%, rgba(139, 255, 214, 0) 100%);
+    background: linear-gradient(90deg, #a95928 0%, #e7bda3 62%, rgba(231, 189, 163, 0) 100%);
   }
 
   .brand {
@@ -88,25 +102,29 @@
     font-weight: 500;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #6fe4b6;
+    color: #db9e78;
     margin-top: 5px;
   }
 
   .headline {
     position: relative;
-    font-family: "Manrope", sans-serif;
-    font-weight: 800;
-    font-size: 78px;
-    line-height: 1.03;
-    letter-spacing: -0.035em;
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 88px;
+    line-height: 1.01;
+    letter-spacing: -0.03em;
     color: #ffffff;
-    max-width: 950px;
-    text-wrap: balance;
+    max-width: 1000px;
   }
 
+  .headline span,
+  .headline em { display: block; }
+
   .headline em {
-    font-style: normal;
-    background: linear-gradient(96deg, #14bd83 0%, #8bffd6 96%);
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    background: linear-gradient(96deg, #c9784c 0%, #efc6a7 96%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -124,11 +142,11 @@
     font-size: 25px;
     line-height: 1.42;
     font-weight: 400;
-    color: #a9c2bd;
+    color: #e0ac8b;
     max-width: 620px;
   }
 
-  .lede strong { color: #eaf5f0; font-weight: 600; }
+  .lede strong { color: #f4eeeb; font-weight: 600; }
 
   .badge {
     flex: 0 0 auto;
@@ -145,7 +163,7 @@
     font-size: 54px;
     line-height: 1;
     letter-spacing: -0.03em;
-    color: #8bffd6;
+    color: #e7bda3;
     white-space: nowrap;
   }
 
@@ -154,28 +172,28 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #7f9a95;
+    color: #9f887a;
     white-space: nowrap;
   }
 </style>
 </head>
 <body>
-  <div class="card" role="img" aria-label="Profit Growth Coaching social card">
+  <div class="card" role="img" aria-label="Profit Guild social card">
     <div class="grid"></div>
     <div class="rule"></div>
 
     <div class="brand">
       <img src="/assets/favicon.svg" alt="" />
       <div>
-        <div class="brand-name">Profit Growth Coaching</div>
-        <div class="brand-sub">Ecommerce profitability</div>
+        <div class="brand-name">Profit Guild</div>
+        <div class="brand-sub">Profit strategy studio</div>
       </div>
     </div>
 
-    <h1 class="headline">Keep more of every <em>dollar you sell.</em></h1>
+    <h1 class="headline"><span>Make growth</span><em>worth keeping.</em></h1>
 
     <div class="lower">
-      <p class="lede">Profit-first coaching for ecommerce founders doing <strong>$30k&ndash;$1M+/month</strong>. Find the margin leaking out of your store &mdash; without spending more on ads.</p>
+      <p class="lede">Profit-first strategy for ecommerce founders doing <strong>$30k&ndash;$1M+/month</strong>. We turn revenue into profit you can keep &mdash; without spending more on ads.</p>
       <div class="badge">
         <div class="badge-value">+3&ndash;8 pts</div>
         <div class="badge-label">Margin in 90 days</div>

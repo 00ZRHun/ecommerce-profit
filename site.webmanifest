@@ -1,11 +1,11 @@
 {
-  "name": "Profit Growth Coaching",
-  "short_name": "Profit Growth",
-  "description": "Profit-first ecommerce coaching for founders doing $30k–$1M+ per month.",
+  "name": "Profit Guild",
+  "short_name": "Profit Guild",
+  "description": "Profit-first strategy for ecommerce founders who intend to keep what they build.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#040a13",
-  "theme_color": "#040a13",
+  "background_color": "#15110e",
+  "theme_color": "#15110e",
   "icons": [
     { "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
     { "src": "/assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }

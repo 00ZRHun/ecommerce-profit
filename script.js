@@ -1,5 +1,5 @@
 /**
- * Profit Growth Coaching — funnel interactions
+ * Profit Guild — funnel interactions
  * No dependencies. Progressive enhancement only.
  */
 (() => {
@@ -523,7 +523,7 @@
   }
 
   function openBooking() {
-    const subject = encodeURIComponent("15-minute fit call — Profit Growth Coaching");
+    const subject = encodeURIComponent("15-minute fit call — Profit Guild");
     const body = encodeURIComponent(
       "Hi, I'd like to book a 15-minute call to see if profit coaching is a fit.\n\nStore URL:\nMonthly revenue:\nBiggest challenge:\n"
     );

@@ -1,13 +1,13 @@
 # syntax=docker/dockerfile:1
 # ---------------------------------------------------------------------------
-# Profit Growth Coaching — production image
+# Profit Guild — production image
 #
 # Zero third-party dependencies: the server is pure Python standard library,
 # so the image is just the Python base plus the static site.
 # ---------------------------------------------------------------------------
 FROM python:3.12-slim AS runtime
 
-LABEL org.opencontainers.image.title="Profit Growth Coaching funnel" \
+LABEL org.opencontainers.image.title="Profit Guild funnel" \
       org.opencontainers.image.description="Static marketing funnel + zero-dependency lead API" \
       org.opencontainers.image.licenses="UNLICENSED"
 

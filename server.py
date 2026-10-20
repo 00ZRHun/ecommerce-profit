@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Production server for the Profit Growth Coaching funnel.
+"""Production server for the Profit Guild funnel.
 
 Zero third-party dependencies. Serves the static site, accepts audit
 applications, forwards them to an optional webhook, stores them as JSON Lines,
@@ -997,7 +997,7 @@ class FunnelHandler(BaseHTTPRequestHandler):
                 HTTPStatus.INTERNAL_SERVER_ERROR,
                 {
                     "ok": False,
-                    "message": "We could not save your application. Please email hello@profitgrowthcoaching.com.",
+                    "message": "We could not save your application. Please try again or use the email link below.",
                 },
             )
             return
@@ -1257,15 +1257,15 @@ def error_page(message: str, back_href: str) -> str:
     )
     return f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Submission error — Profit Growth Coaching</title>
+<title>Submission error — Profit Guild</title>
 <meta name="robots" content="noindex">
 <style>
-body{{margin:0;min-height:100vh;display:grid;place-items:center;background:#040a13;color:#eef6f3;
+body{{margin:0;min-height:100vh;display:grid;place-items:center;background:#15110e;color:#f6f2ef;
 font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;padding:24px}}
-main{{max-width:520px;text-align:center;background:#081725;border:1px solid rgba(148,177,196,.14);
+main{{max-width:520px;text-align:center;background:#19120e;border:1px solid rgba(223, 168, 133, .14);
 border-radius:22px;padding:44px 32px}}
-h1{{font-size:1.6rem;margin:0 0 12px}}p{{color:#91a6b7;margin:0 0 24px}}
-a{{display:inline-block;background:#3ce7aa;color:#03130d;font-weight:700;text-decoration:none;
+h1{{font-size:1.6rem;margin:0 0 12px}}p{{color:#c0b1a8;margin:0 0 24px}}
+a{{display:inline-block;background:#d18352;color:#0f0b08;font-weight:700;text-decoration:none;
 padding:12px 22px;border-radius:999px}}
 </style></head><body><main><h1>We couldn't submit that</h1><p>{safe_message}</p>
 <a href="{back_href}">Go back to the form</a></main></body></html>"""
@@ -1320,7 +1320,7 @@ def build_csp(root: Path) -> str:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Profit Growth Coaching funnel server")
+    parser = argparse.ArgumentParser(description="Profit Guild funnel server")
     parser.add_argument("--host", help="Bind address (default: HOST or 127.0.0.1)")
     parser.add_argument("--port", type=int, help="Port (default: PORT or 4173)")
     parser.add_argument("--data-dir", help="Directory for leads and events")
